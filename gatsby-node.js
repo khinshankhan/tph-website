@@ -3,6 +3,7 @@ const { createFilePath } = require("gatsby-source-filesystem")
 const helper = require("./scripts/buildHelpers")
 const path = require(`path`)
 const fs = require("fs")
+const express = require("express")
 
 const requiredArticleFrontmatter = ["authors", "date"]
 
@@ -35,9 +36,9 @@ try {
   console.log("(◕‸ ◕✿) Users list not present, skipping user resolution...")
 }
 
-const validateResourceArticle = node => {
+const validateResourceArticle = (node) => {
   const missingField = requiredArticleFrontmatter.find(
-    required => node.frontmatter[required]
+    (required) => node.frontmatter[required]
   )
   if (missingField) {
     console.error(
@@ -214,4 +215,8 @@ exports.createPages = ({ actions, graphql }) => {
     createArchives({ createPage, graphql }),
     createResources({ createPage, graphql }),
   ])
+}
+
+exports.onCreateDevServer = ({ app }) => {
+  app.use(express.static("public"))
 }
