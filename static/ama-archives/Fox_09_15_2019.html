@@ -1,0 +1,2447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>The Programmer&#39;s Hangout -  Fox Q&A - Sep 15th, 2019</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <style>
+        /* === GENERAL === */
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/6c6374bad0b0b6d204d8d6dc4a18d820.woff);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/e8acd7d9bf6207f99350ca9f9e23b168.woff);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/3bdef1251a424500c1b3a78dea9b7e57.woff);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/be0060dafb7a0e31d2a1ca17c0708636.woff);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/8e12fb4f14d9c4592eb8ec9f22337b04.woff);
+    font-weight: 700;
+}
+
+body {
+    font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    object-fit: contain;
+}
+
+.markdown {
+    white-space: pre-wrap;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+}
+
+.spoiler {
+    border-radius: 3px;
+}
+
+.quote {
+    border-left: 4px solid;
+    border-radius: 3px;
+    margin: 8px 0;
+    padding-left: 10px;
+}
+
+.pre {
+    font-family: "Consolas", "Courier New", Courier, monospace;
+}
+
+.pre--multiline {
+    margin-top: 4px;
+    padding: 8px;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+.pre--inline {
+    padding: 2px;
+    border-radius: 3px;
+    font-size: 85%;
+}
+
+.mention {
+    font-weight: 500;
+}
+
+.emoji {
+    width: 1.45em;
+    height: 1.45em;
+    margin: 0 1px;
+    vertical-align: -0.4em;
+}
+
+.emoji--small {
+    width: 1rem;
+    height: 1rem;
+}
+
+.emoji--large {
+    width: 2rem;
+    height: 2rem;
+}
+
+/* === INFO === */
+
+.info {
+    display: flex;
+    max-width: 100%;
+    margin: 0 5px 10px 5px;
+}
+
+.info__guild-icon-container {
+    flex: 0;
+}
+
+.info__guild-icon {
+    max-width: 88px;
+    max-height: 88px;
+}
+
+.info__metadata {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.info__guild-name {
+    font-size: 1.4em;
+}
+
+.info__channel-name {
+    font-size: 1.2em;
+}
+
+.info__channel-topic {
+    margin-top: 2px;
+}
+
+.info__channel-message-count {
+    margin-top: 2px;
+}
+
+.info__channel-date-range {
+    margin-top: 2px;
+}
+
+/* === CHATLOG === */
+
+.chatlog {
+    max-width: 100%;
+    margin-bottom: 24px;
+}
+
+.chatlog__message-group {
+    display: flex;
+    margin: 0 10px;
+    padding: 15px 0;
+    border-top: 1px solid;
+}
+
+.chatlog__author-avatar-container {
+    flex: 0;
+    width: 40px;
+    height: 40px;
+}
+
+.chatlog__author-avatar {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.chatlog__messages {
+    flex: 1;
+    min-width: 50%;
+    margin-left: 20px;
+}
+
+.chatlog__author-name {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.chatlog__timestamp {
+    margin-left: 5px;
+    font-size: .75em;
+}
+
+.chatlog__message {
+    padding: 2px 5px;
+    margin-right: -5px;
+    margin-left: -5px;
+    background-color: transparent;
+    transition: background-color 1s ease;
+}
+
+.chatlog__content {
+    font-size: .9375em;
+    word-wrap: break-word;
+}
+
+.chatlog__edited-timestamp {
+    margin-left: 3px;
+    font-size: .8em;
+}
+
+.chatlog__attachment-thumbnail {
+    margin-top: 5px;
+    max-width: 50%;
+    max-height: 500px;
+    border-radius: 3px;
+}
+
+.chatlog__embed {
+    margin-top: 5px;
+    display: flex;
+    max-width: 520px;
+}
+
+.chatlog__embed-color-pill {
+    flex-shrink: 0;
+    width: 4px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.chatlog__embed-content-container {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 10px;
+    border: 1px solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.chatlog__embed-content {
+    width: 100%;
+    display: flex;
+}
+
+.chatlog__embed-text {
+    flex: 1;
+}
+
+.chatlog__embed-author {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.chatlog__embed-author-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 9px;
+    border-radius: 50%;
+}
+
+.chatlog__embed-author-name {
+    font-size: .875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-title {
+    margin-bottom: 4px;
+    font-size: .875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-description {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.chatlog__embed-fields {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chatlog__embed-field {
+    flex: 0;
+    min-width: 100%;
+    max-width: 506px;
+    padding-top: 10px;
+}
+
+.chatlog__embed-field--inline {
+    flex: 1;
+    flex-basis: auto;
+    min-width: 150px;
+}
+
+.chatlog__embed-field-name {
+    margin-bottom: 4px;
+    font-size: .875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-field-value {
+    font-size: .875em;
+    font-weight: 500;
+}
+
+.chatlog__embed-thumbnail {
+    flex: 0;
+    margin-left: 20px;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-image-container {
+    margin-top: 10px;
+}
+
+.chatlog__embed-image {
+    max-width: 500px;
+    max-height: 400px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-footer {
+    margin-top: 10px;
+}
+
+.chatlog__embed-footer-icon {
+    margin-right: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.chatlog__embed-footer-text {
+    font-weight: 500;
+    font-size: .75em;
+}
+
+.chatlog__reactions {
+    display: flex;
+}
+
+.chatlog__reaction {
+    display: flex;
+    align-items: center;
+    margin: 6px 2px 2px 2px;
+    padding: 3px 6px;
+    border-radius: 3px;
+}
+
+.chatlog__reaction-count {
+    min-width: 9px;
+    margin-left: 6px;
+    font-size: .875em;
+}
+
+.chatlog__bot-tag {
+    margin-left: 0.3em;
+    background: #7289da;
+    color: #ffffff;
+    font-size: 0.625em;
+    padding: 1px 2px;
+    border-radius: 3px;
+    vertical-align: middle;
+    line-height: 1.3;
+    position: relative;
+    top: -.2em;
+}
+    </style>
+    <style>
+        /* === GENERAL === */
+
+body {
+    background-color: #36393e;
+    color: #dcddde;
+}
+
+a {
+    color: #0096cf;
+}
+
+.spoiler {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.quote {
+    border-color: #4f545c;
+}
+
+.pre {
+    background-color: #2f3136 !important;
+}
+
+.pre--multiline {
+    border-color: #282b30 !important;
+    color: #839496 !important;
+}
+
+.mention {
+    color: #7289da;
+}
+
+/* === INFO === */
+
+.info__guild-name {
+    color: #ffffff;
+}
+
+.info__channel-name {
+    color: #ffffff;
+}
+
+.info__channel-topic {
+    color: #ffffff;
+}
+
+/* === CHATLOG === */
+
+.chatlog__message-group {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.chatlog__author-name {
+    color: #ffffff;
+}
+
+.chatlog__timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__message--highlighted {
+    background-color: rgba(114, 137, 218, 0.2) !important;
+}
+
+.chatlog__message--pinned {
+    background-color: rgba(249, 168, 37, 0.05);
+}
+
+.chatlog__edited-timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__embed-content-container {
+    background-color: rgba(46, 48, 54, 0.3);
+    border-color: rgba(46, 48, 54, 0.6);
+}
+
+.chatlog__embed-author-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-author-name-link {
+    color: #ffffff;
+}
+
+.chatlog__embed-title {
+    color: #ffffff;
+}
+
+.chatlog__embed-description {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-field-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-field-value {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-footer {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__reaction {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.chatlog__reaction-count {
+    color: rgba(255, 255, 255, 0.3);
+}
+    </style>
+
+    <script>
+        function scrollToMessage(event, id) {
+            var element = document.getElementById('message-' + id);
+
+            if (element !== null && element !== undefined) {
+                event.preventDefault();
+
+                element.classList.add('chatlog__message--highlighted');
+
+                window.scrollTo({
+                    top: element.getBoundingClientRect().top - document.body.getBoundingClientRect().top - (window.innerHeight / 2),
+                    behavior: 'smooth'
+                });
+
+                window.setTimeout(function() {
+                    element.classList.remove('chatlog__message--highlighted');
+                }, 2000);
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/solarized-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.pre--multiline').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div class="info">
+    <div class="info__guild-icon-container">
+        <img class="info__guild-icon" src="https://cdn.discordapp.com/icons/244230771232079873/717d62837b3443f2fbce0f49271ff364.png" />
+    </div>
+    <div class="info__metadata">
+        <div class="info__guild-name">The Programmer&#39;s Hangout</div>
+        <div class="info__channel-name">Fox Q&A - Sep 15th, 2019</div>
+
+
+        <div class="info__channel-message-count">68 messages</div>
+
+    </div>
+</div>
+
+<div class="chatlog">
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png" />
+            </div>
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Nano#8992" data-user-id="429275180309807134">Nano</span>
+
+                    <span class="chatlog__bot-tag">BOT</span>
+
+                <span class="chatlog__timestamp">15-Sep-19 02:59 PM</span>
+
+                    <div class="chatlog__message " data-message-id="622884257655685133" id="message-622884257655685133">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering Elite&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  How did you come up with your online alias?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/167417801873555456/a_eb06dfd9d8c7c606ba90fc148d35a3be.gif" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Elite
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">18</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="🦊" title="🦊" src="https://twemoji.maxcdn.com/2/72x72/1f98a.png" />
+                                    <span class="chatlog__reaction-count">10</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="blinking" title="blinking" src="https://cdn.discordapp.com/emojis/593050160196616193.png" />
+                                    <span class="chatlog__reaction-count">2</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622884258096087053" id="message-622884258096087053">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> I like foxes.</span>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="chatlog__message " data-message-id="622884678021677105" id="message-622884678021677105">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering supergrecko&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Why did you decide to start The Programmers Hangout?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/190902201659424769/a_036b01dddf1d56d9587e4d6cf269912c.gif" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by supergrecko
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">2</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622884678474530826" id="message-622884678474530826">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> I disliked how other servers made a point of allowing people free roam to discuss anything. The goal is to help everyone as equally as possible, some conversations, e.g. &quot;X is a bad language&quot; simply take up too much space to be productive for a discord chat, so I made a server with the goal of removing those kinds of conversations. You can see my most recent attempt to get rid of more such conversations in #announcements. I&#39;m always open to dialogue though so if anyone disagrees with those choices feel free to send some messages in #server-meta</span>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="chatlog__message " data-message-id="622885355384733779" id="message-622885355384733779">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering andr&#233;&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What is your greatest achievement so far?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/454793358716698624/367c3d179cb3297a245a6a8552e6e0c8.png" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by andr&#233;
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">3</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622885355850563584" id="message-622885355850563584">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> It&#39;s hard to say, I feel like this can be attacked a few different levels. If you&#39;re talking about achievements that other people would care about I could talk about grades or promotions, but I don&#39;t think those things matter all that much. I think what matters the most is being the best version of yourself. In the last year I&#39;ve tried to try new things more often, I used to hate natural languages (e.g. French, Spanish) but as of a few days ago I&#39;ve been rated by 2 people as a B1 in German. I just need to take the official test to see where I am. In short: I think personal development is far more valuable than any trinkets or trophies you can get your hands on.</span>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="chatlog__message " data-message-id="622885420560154654" id="message-622885420560154654">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering saturn&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What kind of keyboard are you using right now?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/230854947413950476/e701f7cf966bdcb2fd78c4be150bf0e1.png" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by saturn
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">3</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622885420962676778" id="message-622885420962676778">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> One that works</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="🇪" title="🇪" src="https://twemoji.maxcdn.com/2/72x72/1f1ea.png" />
+                                    <span class="chatlog__reaction-count">10</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="🇷" title="🇷" src="https://twemoji.maxcdn.com/2/72x72/1f1f7.png" />
+                                    <span class="chatlog__reaction-count">10</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="🇬" title="🇬" src="https://twemoji.maxcdn.com/2/72x72/1f1ec.png" />
+                                    <span class="chatlog__reaction-count">10</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="🇴" title="🇴" src="https://twemoji.maxcdn.com/2/72x72/1f1f4.png" />
+                                    <span class="chatlog__reaction-count">10</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="🇩" title="🇩" src="https://twemoji.maxcdn.com/2/72x72/1f1e9.png" />
+                                    <span class="chatlog__reaction-count">10</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭕" title="⭕" src="https://twemoji.maxcdn.com/2/72x72/2b55.png" />
+                                    <span class="chatlog__reaction-count">11</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="🇽" title="🇽" src="https://twemoji.maxcdn.com/2/72x72/1f1fd.png" />
+                                    <span class="chatlog__reaction-count">10</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="ergodoxbtw" title="ergodoxbtw" src="https://cdn.discordapp.com/emojis/495670429596516353.gif" />
+                                    <span class="chatlog__reaction-count">8</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622885812035518476" id="message-622885812035518476">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering Fakerac&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Favorite keyboard/keyboard switch?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/167707565805928449/db4da9e4c24e8e8c971f9bed5343c97b.png" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Fakerac
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622885812740292609" id="message-622885812740292609">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> Ergodox is my favourite keyboard because of the health benefits, but I think if you&#39;re someone who doesn&#39;t spend much time at a computer you don&#39;t really need one. So for someone like that I would be more likely to recommend just a bog standard corsair keyboard. For switches, I think the 78g (I think that&#39;s the weight) zilent v2s are the best. They feel mechanical, they are mechanical, and they&#39;re not loud an annoying. Perfect for the open office environments I seem to find myself in</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="🤔" title="🤔" src="https://twemoji.maxcdn.com/2/72x72/1f914.png" />
+                                    <span class="chatlog__reaction-count">2</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622886516682915901" id="message-622886516682915901">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering Clements&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  How do you keep an healthy work/life balance ?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/218504174374092800/c64aa48604d70cc058828a9a3aee1f0f.png" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Clements
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">4</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622886517358198786" id="message-622886517358198786">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> I leave work on time every single day, I only work overtime in dire situations, I try to exercise regularly, I try to learn and do things other than programming. I think a lot of people here really like programming, but I think the reality is, deep down, people <em>love</em> learning. I&#39;d recommend that you try to stay away from the screen more often but it doesn&#39;t need to be a day and night change. Maybe just this following week try to read a book for the hour before bed. If you&#39;re already doing that, maybe try to come into work sooner and leave sooner too. You have a limited amount of time to experience the world, your parents, your friends. Nothing you have can&#39;t be taken away from you. Try to use your time wisely. That&#39;s what I try to do and sure, sometimes I am lazy too, but trying all of the time leads to fun and new experiences <em>most</em> of the time. In short: Try</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="👍" title="👍" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png" />
+                                    <span class="chatlog__reaction-count">11</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">4</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="NekoAtsumeSwat" title="NekoAtsumeSwat" src="https://cdn.discordapp.com/emojis/590305531575533599.gif" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622886613881454602" id="message-622886613881454602">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering ddivad&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  When starting TPH did you expect it to get this big?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/394484823944593409/a_c7b6bc78dcdb060208bf7f3f5a875e8f.gif" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by ddivad
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">2</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622886614024323093" id="message-622886614024323093">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> Absolutely not, I basically wanted a server with 150 people. I don&#39;t know what happened <img class="emoji " alt="😂" title="😂" src="https://twemoji.maxcdn.com/2/72x72/1f602.png" /></span>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="chatlog__message " data-message-id="622886856098447368" id="message-622886856098447368">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering Vin&#162;&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  what technologies / languages are you planning on learning in the near future?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/110756651694297088/f8d8a2d16f3ed3fa7878eea9e8c2caaf.png" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Vin&#162;
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622886856580923392" id="message-622886856580923392">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> Good question, I figure that my weakest suit is languages that operate outside of the JVM. I&#39;ve already spent a good deal of time learning a lot of OOP/FP stuff but I&#39;ve never really spent a good deal of time with Rust. When I conquer the German B2 exam I&#39;ll probably pick it up.</span>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="chatlog__message " data-message-id="622886979562110986" id="message-622886979562110986">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering (SMC) Tadakune&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  how much do you sleep?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/495407966590337024/496c29720e87ca8be5e410e7e4fbbf64.png" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by (SMC) Tadakune
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">4</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622886979989929994" id="message-622886979989929994">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> Not that much, I wake up at the same time every day, but elsewise, there is time enough to sleep when you&#39;re dead</span>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="chatlog__message " data-message-id="622887073694613543" id="message-622887073694613543">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering Kaunta&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  How do you run this place without going insane?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/371307366937001986/10f47d16b0fa591685d386fcdef437ea.png" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Kaunta
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">4</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="yes" title="yes" src="https://cdn.discordapp.com/emojis/581918948803477514.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622887074198192128" id="message-622887074198192128">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> I don&#39;t! If you draw your eyes to the announcements channel you can see I&#39;m at least one third insane</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="GWmiyanoXDD" title="GWmiyanoXDD" src="https://cdn.discordapp.com/emojis/398867103316181002.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="madman" title="madman" src="https://cdn.discordapp.com/emojis/422571304386822154.png" />
+                                    <span class="chatlog__reaction-count">9</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622887573156790296" id="message-622887573156790296">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering Kibb&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What is your area of personal interest in computer science?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/163403280926375936/c4a9aece9c0335c12fb7f6161e1d2505.png" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Kibb
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622887573819490304" id="message-622887573819490304">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> I adore language-design more than anything else. The innards of the compiler, Type theory and all things revolving around it. It&#39;s very pleasant to create programs in things like Haskell. On the contrary, I am all about being time efficient... so these two loves of mine tend to battle with each other. I&#39;ve decided that I will leave the design of languages and the like to people who have a bigger passion for it than me. Just reading up on the latest advancements in FP or seeing new people pick up their first functional language is enough for me <img class="emoji " alt="🙂" title="🙂" src="https://twemoji.maxcdn.com/2/72x72/1f642.png" /></span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="zoop" title="zoop" src="https://cdn.discordapp.com/emojis/488809719964762122.png" />
+                                    <span class="chatlog__reaction-count">6</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="haskell" title="haskell" src="https://cdn.discordapp.com/emojis/581379849029943296.png" />
+                                    <span class="chatlog__reaction-count">10</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622887806586585091" id="message-622887806586585091">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering DrBracewell&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What language did you start coding with?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/262293669099470848/1dcbcd3cd95128a766ba71f76b9c9229.png" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by DrBracewell
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622887807475646504" id="message-622887807475646504">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> I started with HTML when I was 13... Yes I know that&#39;s not a language, but it&#39;s the first &quot;programmy&quot; like thing that I had my hands on. A few years later skip a few I ended up toying with Java. After that I decided that I should do a Bachelors in Cs and here I am now <img class="emoji " alt="😄" title="😄" src="https://twemoji.maxcdn.com/2/72x72/1f604.png" /></span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="java" title="java" src="https://cdn.discordapp.com/emojis/581379771250769921.png" />
+                                    <span class="chatlog__reaction-count">22</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622888535384522752" id="message-622888535384522752">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering Christian&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What&#39;s you opinion on the current trend towards development on electron based applications for easy cross platform compatibility at the cost of performance</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/82969926125490176/b8022541cd5c1046b68dc266fa110b88.png" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Christian
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622888535850090525" id="message-622888535850090525">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> I think it&#39;s a good thing, really. If you can pump out an app that saves lives 10 times faster because you can build an electron app... performance be damned. That being said, there are two options to be had here... if you&#39;re writing software for an oil rig the likelihood is you really don&#39;t have much processing power to work with and you really need to use something that is hand rolled. I think electron is very good for a vast majority of use cases out there. That being said, building more performant is often appreciated, but doing that doesn&#39;t come without a cost. Take a text editor - yes it&#39;s nice to build it in C++ but really how do you fit plugins into such an ecosystem. You can totally do it! It&#39;s just much harder than consumer some js. Really, I just wish people would use what they <em>like</em> rather than what they think is <em>right</em>. Then they&#39;ll be more likely to finish the project. <img class="emoji " alt="😅" title="😅" src="https://twemoji.maxcdn.com/2/72x72/1f605.png" /></span>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="chatlog__message " data-message-id="622888933730287637" id="message-622888933730287637">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering Lgneous&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Which sector (finance, ...), among those you have worked in, was your favourite ?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/154552940680445952/fa827cd746e2b29f90f42e393d453c32.png" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Lgneous
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622888934220890122" id="message-622888934220890122">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> Oil rig monitoring, fintech, web development -- My favourite is fintech. They have the most interesting problems. Also, work for a 3rd party company and not a bank. If you do work for one, make sure it&#39;s one that is modern. This way you get to use all the cool gadgets you want. It&#39;s not without its stresses though... I wrote an API all by myself for a bigname bank which had a price tag of maybe $500k. So if you go down the fintech road, make sure you can handle the pressure!</span>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="chatlog__message " data-message-id="622889211556659220" id="message-622889211556659220">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering JoaBro&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Do you have any other hobbies?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/embed/avatars/1.png" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by JoaBro
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622889211959181312" id="message-622889211959181312">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> I pick heavy things up and put them down, I am a sneaker head, I&#39;ve a little watch collection but I don&#39;t really add much to it, I like teaching people programming... although I guess that&#39;s much of the same thing, I love gaming, and I love exploration. Part of why I want to move to Germany is, well, why not? It sounds hard doesn&#39;t it! <img class="emoji " alt="😄" title="😄" src="https://twemoji.maxcdn.com/2/72x72/1f604.png" /></span>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="chatlog__message " data-message-id="622889448283045898" id="message-622889448283045898">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering lima()&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  when did you start programming, why and how? and which things did u learn on the way</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/563213763080224786/d67402c1640a7657671eaceee525c6cb.png" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by lima()
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">3</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622889448698413059" id="message-622889448698413059">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> It was coming up on 10 years ago now (not exactly, I can&#39;t remember though). I feel like programming taught me how to think. I learned because my older brother, as much as I dislike him, is a software engineer too. His job seemed cool.</span>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="chatlog__message " data-message-id="622889635089219636" id="message-622889635089219636">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering Badnja&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  How do you find time for personal projects after work?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/252384408827461632/e248270914264352e433bf0457841d73.png" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Badnja
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622889635705520139" id="message-622889635705520139">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> I mostly just carve 30 minutes out per day at the same time every single day and program at that time. 30 minutes per day is plenty when you already sink 40 hours per week. The ideal amount of work is that which can be sustained for decades.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="👍" title="👍" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png" />
+                                    <span class="chatlog__reaction-count">5</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622890089827139589" id="message-622890089827139589">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering ddivad&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  With all of your experience in mind hat one piece of advice would you give to someone just starting out in a SE career?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/394484823944593409/a_c7b6bc78dcdb060208bf7f3f5a875e8f.gif" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by ddivad
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">3</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622890090041049132" id="message-622890090041049132">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> I would say the most important piece of advice is there are two sides to every story. People hate a thing but a similar amount of people love a thing... which one are you? Well you can only find out by trying. In short, try things with an open mind. It&#39;ll serve your career extremely well. Outside of that, work on your communication skills and remember to live. SE is a great career, but remember... it&#39;s a career. The people around you and how well you are upstairs. Those are the things that really matter.</span>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="chatlog__message " data-message-id="622890612097548304" id="message-622890612097548304">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering Xetera&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Did you have that moment where you realized you were standing on top of the dunning krueger &quot;mt. stupid&quot; as a beginner? What lead you to figure that out?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/140862798832861184/a_edf7782741217f87a3cd1ab5d98f30b2.gif" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Xetera
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622890612513046543" id="message-622890612513046543">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> Everyone has this moment, and if you have not had it yet, you will soon. For me, it was when I was in my job in fintech. It was not necessarily a dunning krueger thing... it was much more so &quot;wow, that guy is so good, I could never be that good.&quot;. I would say this is kind of the defining movement when you move from &quot;dangerous know it all&quot; to &quot;effective developer&quot;. For some people it can be when you&#39;re a complete noob, but really this moment comes much later when you <em>think</em> you know things. Never assume!</span>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="chatlog__message " data-message-id="622890841924435998" id="message-622890841924435998">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering Zenohm&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What&#39;s your favorite anime?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/150799801368313858/7d408800909c61c53cb317897ef35229.png" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Zenohm
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622890842323157004" id="message-622890842323157004">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> I guess I will be a basic boi and say dragonball. But outside of that I really, really loved these short animes: Code geass, One punch man, Death note, hero academia. I don&#39;t watch much anymore, though... <img class="emoji " alt="😅" title="😅" src="https://twemoji.maxcdn.com/2/72x72/1f605.png" /> recommendations welcome</span>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="chatlog__message " data-message-id="622890944743735308" id="message-622890944743735308">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering RedKnight&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What&#39;s your favourite movie?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/272683271559708672/455d02dbb32207a2dd5dda52e89a5aac.png" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by RedKnight
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622890946509537306" id="message-622890946509537306">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> I do not have one, but if I had to pick I would probably say the dark knight</span>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="chatlog__message " data-message-id="622891011911188540" id="message-622891011911188540">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering Elite&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Do you have any go-to song(s) or genre(s) you listen to that help you concentrate when programming?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/167417801873555456/a_eb06dfd9d8c7c606ba90fc148d35a3be.gif" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Elite
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622891012334944277" id="message-622891012334944277">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> Electronic. Electronic for sure.</span>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="chatlog__message " data-message-id="622891186209685509" id="message-622891186209685509">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering Eyepatch&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What did you do when you had a pause and you don&#39;t know what to do next while learning programming?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/282598733730807819/2ab918c68fab444035666a1bdddbfb61.png" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Eyepatch
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622891186650349579" id="message-622891186650349579">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> I went and found people who were better and smarter than I was and asked them. When they didn&#39;t know I found a problem that annoyed me and solved it. I kept doing that until I got bored and I feel like I&#39;m at a good point now. There is always more to learn, though.</span>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="chatlog__message " data-message-id="622891298956771328" id="message-622891298956771328">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering ddivad&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  In your opinion, what makes a good software engineer?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/394484823944593409/a_c7b6bc78dcdb060208bf7f3f5a875e8f.gif" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by ddivad
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622891299674259465" id="message-622891299674259465">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> Being grounded. I really can&#39;t stand working with people who bikeshed or who have it as &quot;my way or the high way&quot;</span>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="chatlog__message " data-message-id="622891591996276746" id="message-622891591996276746">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering Lgneous&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  If you had one advice to give to a freshly graduated software engineer just getting its foot in the industry, what would it be ?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/154552940680445952/fa827cd746e2b29f90f42e393d453c32.png" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Lgneous
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">2</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622891592407187486" id="message-622891592407187486">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> Having a resume that stands out is the difference between having a job and not. Find someone who is a hiring manager, ask them to review yours. You will thank me later. Also -- don&#39;t be afraid to just accept a job and get the ball rolling, you can still accept a better offer later when you&#39;ve more time to look into it. Get the money and experience rolling!</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="GWcmeisterPeepoLove" title="GWcmeisterPeepoLove" src="https://cdn.discordapp.com/emojis/403295311189245952.png" />
+                                    <span class="chatlog__reaction-count">6</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622891831532978176" id="message-622891831532978176">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering Elliott&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Whenever you&#39;re interviewing potential hires, what are some of the most important traits or values you look out for?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/335628039302021121/a_30232e21b6efa0e86b0b107b56f0af71.gif" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Elliott
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">2</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622891832233164800" id="message-622891832233164800">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> Honesty. If you&#39;re a liar I don&#39;t want to talk to you. If you can say &quot;gee I really don&#39;t know that&quot; I am 100 times more likely to say yes. This tells me that I can work with you. You don&#39;t know everything, don&#39;t pretend like you know everything.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="Galaxy_Brain" title="Galaxy_Brain" src="https://cdn.discordapp.com/emojis/615040886350282762.png" />
+                                    <span class="chatlog__reaction-count">13</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622892022507765802" id="message-622892022507765802">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering lambda&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  How do you self learn most efficiently?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/311626962873614336/ef8a94cde656fdd0b0d878237d6dabfa.png" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by lambda
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">5</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622892023393026098" id="message-622892023393026098">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> Remove distractions, play some good songs and really focus. Try to get all of the annoying crap you need to do out of the way early in your day, then you can focus later on. I would also say having a clean work environment is paramount.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="99" title="99" src="https://cdn.discordapp.com/emojis/350414197529640963.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622892119178215443" id="message-622892119178215443">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering pythia&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Why did you move from spacemacs to emacs?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/304708122600013824/a_3961e383237d30773b758bf82eca2f2b.gif" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by pythia
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622892119631069244" id="message-622892119631069244">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> To have an excuse to learn some lisp so that I could better introduce friends to it</span>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="chatlog__message " data-message-id="622892328087977995" id="message-622892328087977995">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering Elliott&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What is one mistake you witness new programmers making more frequently than others?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/335628039302021121/a_30232e21b6efa0e86b0b107b56f0af71.gif" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Elliott
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">3</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622892328528510989" id="message-622892328528510989">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> Absorbing the opinions of jaded people as if they are fact. You&#39;re young, develop your own crappy opinions yourself! It&#39;ll work out much better for you if you do it that way. At least that way you will understand what you are saying <img class="emoji " alt="🙂" title="🙂" src="https://twemoji.maxcdn.com/2/72x72/1f642.png" /></span>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="chatlog__message " data-message-id="622892549413011477" id="message-622892549413011477">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering Elite&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Was programming always your future goal or did you have another career path in mind when you were younger?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/167417801873555456/a_eb06dfd9d8c7c606ba90fc148d35a3be.gif" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Elite
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622892550252003372" id="message-622892550252003372">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> I was going to be a physicist but I decided computers were like, totally cooler than science and such. <img class="emoji " alt="🙄" title="🙄" src="https://twemoji.maxcdn.com/2/72x72/1f644.png" /> biiiig mistake. Haha, I&#39;m just kidding. Physics was always on my mind but I love programming more than I like physics.</span>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="chatlog__message " data-message-id="622892649715728388" id="message-622892649715728388">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering Syndicate&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What was your plan B if programming didn&#39;t turn out to make ends meet? Did you have any other careers in mind that you could have safely landed on?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/233030993068425216/910b0c7ae51b8f905b2295b71deb8492.png" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Syndicate
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">2</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622892650470703125" id="message-622892650470703125">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> When I was younger: Physics, today: I would probably teach German or maths or something.</span>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="chatlog__message " data-message-id="622892752497147905" id="message-622892752497147905">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering Kibb&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Did you ever hit a point where you thought you knew everything then hit a point where you realise you don&#39;t know anything?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/163403280926375936/c4a9aece9c0335c12fb7f6161e1d2505.png" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Kibb
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622892753012916244" id="message-622892753012916244">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> I&#39;ve never assumed I knew everything but I feel like I do not know anything a hell of a lot</span>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="chatlog__message " data-message-id="622893017526829067" id="message-622893017526829067">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering Zenohm&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Why did you return as co-owner instead of leaving all responsibility to Elliott?</span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/150799801368313858/7d408800909c61c53cb317897ef35229.png" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Zenohm
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">18</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622893018277609492" id="message-622893018277609492">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> Because I felt bad about leaving the weight of this server on his shoulders <img class="emoji " alt="🙂" title="🙂" src="https://twemoji.maxcdn.com/2/72x72/1f642.png" /> There was a rather large amount of people who tried to contact me. Several people tried adding me to pull requests on gitlab to get my attention. I just decided it was not fair to leave it to someone else alone.</span>
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="chatlog__message " data-message-id="622893256220344320" id="message-622893256220344320">
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">Fox is answering lambda&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  How much weight does research experience hold on a resume vs internships at software companies when applying for a job in software engineering? I asked you this before, but thought I&#39;d ask again for the sake of people watching. <img class="emoji " alt="😅" title="😅" src="https://twemoji.maxcdn.com/2/72x72/1f605.png" /></span></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/311626962873614336/ef8a94cde656fdd0b0d878237d6dabfa.png" />
+
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by lambda
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">4</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="chatlog__message " data-message-id="622893256279195650" id="message-622893256279195650">
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>Fox:</strong> It depends on way too many variables, really. Generally I would say both are quite valuable, but internships are a little more desirable. If you want an industry job, what&#39;s better than industry experience, right?</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="👍" title="👍" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png" />
+                                    <span class="chatlog__reaction-count">16</span>
+                                </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+</div>
+
+</body>
+</html>

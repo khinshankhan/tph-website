@@ -1,0 +1,1965 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>The Programmer&#39;s Hangout - Ninetyninenumbers Q&A - Sep 01st, 2019</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <style>
+        /* === GENERAL === */
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/6c6374bad0b0b6d204d8d6dc4a18d820.woff);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/e8acd7d9bf6207f99350ca9f9e23b168.woff);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/3bdef1251a424500c1b3a78dea9b7e57.woff);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/be0060dafb7a0e31d2a1ca17c0708636.woff);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/8e12fb4f14d9c4592eb8ec9f22337b04.woff);
+    font-weight: 700;
+}
+
+body {
+    font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    object-fit: contain;
+}
+
+.markdown {
+    white-space: pre-wrap;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+}
+
+.spoiler {
+    border-radius: 3px;
+}
+
+.pre {
+    font-family: "Consolas", "Courier New", Courier, Monospace;
+}
+
+.pre--multiline {
+    margin-top: 4px;
+    padding: 8px;
+    border: 2px solid;
+    border-radius: 5px;    
+}
+
+.pre--inline {
+    padding: 2px;
+    border-radius: 3px;
+    font-size: 85%;
+}
+
+.mention {
+    font-weight: 500;
+}
+
+.emoji {
+    width: 1.45em;
+    height: 1.45em;
+    margin: 0 1px;
+    vertical-align: -0.4em;
+}
+
+.emoji--small {
+    width: 1rem;
+    height: 1rem;
+}
+
+.emoji--large {
+    width: 2rem;
+    height: 2rem;
+}
+
+/* === INFO === */
+
+.info {
+    display: flex;
+    max-width: 100%;
+    margin: 0 5px 10px 5px;    
+}
+
+.info__guild-icon-container {
+    flex: 0;
+}
+
+.info__guild-icon {
+    max-width: 88px;
+    max-height: 88px;
+}
+
+.info__metadata {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.info__guild-name {
+    font-size: 1.4em;
+}
+
+.info__channel-name {
+    font-size: 1.2em;
+}
+
+.info__channel-topic {
+    margin-top: 2px;
+}
+
+.info__channel-message-count {
+    margin-top: 2px;
+}
+
+.info__channel-date-range {
+    margin-top: 2px;
+}
+
+/* === CHATLOG === */
+
+.chatlog {
+    max-width: 100%;
+    margin-bottom: 24px;
+}
+
+.chatlog__message-group {
+    display: flex;
+    margin: 0 10px;
+    padding: 15px 0;
+    border-top: 1px solid;
+}
+
+.chatlog__author-avatar-container {
+    flex: 0;
+    width: 40px;
+    height: 40px;
+}
+
+.chatlog__author-avatar {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.chatlog__messages {
+    flex: 1;
+    min-width: 50%;
+    margin-left: 20px;
+}
+
+.chatlog__author-name {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.chatlog__timestamp {
+    margin-left: 5px;
+    font-size: .75em;
+}
+
+.chatlog__content {
+    padding-top: 5px;
+    font-size: .9375em;
+    word-wrap: break-word;
+}
+
+.chatlog__edited-timestamp {
+    margin-left: 3px;
+    font-size: .8em;
+}
+
+.chatlog__attachment {
+    margin: 5px 0;
+}
+
+.chatlog__attachment-thumbnail {
+    max-width: 50%;
+    max-height: 500px;
+    border-radius: 3px;
+}
+
+.chatlog__embed {
+    display: flex;
+    max-width: 520px;
+    margin-top: 5px;
+}
+
+.chatlog__embed-color-pill {
+    flex-shrink: 0;
+    width: 4px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.chatlog__embed-content-container {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 10px;
+    border: 1px solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.chatlog__embed-content {
+    width: 100%;
+    display: flex;
+}
+
+.chatlog__embed-text {
+    flex: 1;
+}
+
+.chatlog__embed-author {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.chatlog__embed-author-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 9px;
+    border-radius: 50%;
+}
+
+.chatlog__embed-author-name {
+    font-size: .875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-title {
+    margin-bottom: 4px;
+    font-size: .875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-description {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.chatlog__embed-fields {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chatlog__embed-field {
+    flex: 0;
+    min-width: 100%;
+    max-width: 506px;
+    padding-top: 10px;
+}
+
+.chatlog__embed-field--inline {
+    flex: 1;
+    flex-basis: auto;
+    min-width: 150px;
+}
+
+.chatlog__embed-field-name {
+    margin-bottom: 4px;
+    font-size: .875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-field-value {
+    font-size: .875em;
+    font-weight: 500;
+}
+
+.chatlog__embed-thumbnail {
+    flex: 0;
+    margin-left: 20px;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-image-container {
+    margin-top: 10px;
+}
+
+.chatlog__embed-image {    
+    max-width: 500px;
+    max-height: 400px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-footer {
+    margin-top: 10px;
+}
+
+.chatlog__embed-footer-icon {
+    margin-right: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.chatlog__embed-footer-text {
+    font-weight: 500;
+    font-size: .75em;
+}
+
+.chatlog__reactions {
+    display: flex;
+}
+
+.chatlog__reaction {
+    display: flex;
+    align-items: center;
+    margin: 6px 2px 2px 2px;
+    padding: 3px 6px;
+    border-radius: 3px;
+}
+
+.chatlog__reaction-count {
+    min-width: 9px;
+    margin-left: 6px;
+    font-size: .875em;
+}
+
+.chatlog__bot-tag {
+    margin-left: 0.3em;
+    background: #7289da;
+    color: #ffffff;
+    font-size: 0.625em;
+    padding: 1px 2px;
+    border-radius: 3px;
+    vertical-align: middle;
+    line-height: 1.3;
+    position: relative;
+    top: -.2em;
+}
+    </style>
+    <style>
+        /* === GENERAL === */
+
+body {
+    background-color: #36393e;
+    color: #dcddde;
+}
+
+a {
+    color: #0096cf;
+}
+
+.spoiler {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.pre {
+    background-color: #2f3136 !important;
+}
+
+.pre--multiline {
+    border-color: #282b30 !important;
+    color: #839496 !important;
+}
+
+.mention {
+    color: #7289da;
+}
+
+/* === INFO === */
+
+.info__guild-name {
+    color: #ffffff;
+}
+
+.info__channel-name {
+    color: #ffffff;
+}
+
+.info__channel-topic {
+    color: #ffffff;
+}
+
+/* === CHATLOG === */
+
+.chatlog__message-group {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.chatlog__author-name {
+    color: #ffffff;
+}
+
+.chatlog__timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__edited-timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__embed-content-container {
+    background-color: rgba(46, 48, 54, 0.3);
+    border-color: rgba(46, 48, 54, 0.6);
+}
+
+.chatlog__embed-author-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-author-name-link {
+    color: #ffffff;
+}
+
+.chatlog__embed-title {
+    color: #ffffff;
+}
+
+.chatlog__embed-description {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-field-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-field-value {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-footer {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__reaction {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.chatlog__reaction-count {
+    color: rgba(255, 255, 255, 0.3);
+}
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/solarized-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.pre--multiline').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
+</head>
+<body>
+    
+<div class="info">
+    <div class="info__guild-icon-container">
+        <img class="info__guild-icon" src="https://cdn.discordapp.com/icons/244230771232079873/717d62837b3443f2fbce0f49271ff364.png" />
+    </div>
+    <div class="info__metadata">
+        <div class="info__guild-name">The Programmer&#39;s Hangout</div>
+         <div class="info__channel-name">Ninetyninenumbers Q&A - Sep 01st, 2019</div>
+        
+
+        <div class="info__channel-message-count">63 messages</div>
+        
+    </div>
+</div>
+
+<div class="chatlog">
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Nano#8992" data-user-id="429275180309807134">Nano</span>
+                    <span class="chatlog__bot-tag">BOT</span>
+                <span class="chatlog__timestamp">01-Sep-19 01:03 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering sudonym&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What advice would you give to someone who wants to get into gamedev?</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/300520395478532096/a20f97ef5c6225f6aff740631374947b.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by sudonym
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> Aside from the obvious of &#39;do your comp-sci education&#39;... Take time to work on your own games in your free time. This will expose you to some of the realities of making a game such as limitations of hardware, why algorithmic complexity is important to understand, and how to practically use data structures. Aside from the technical advantages learned through this experience, it demonstrates passion in the field. Getting a job at a game company often has you going up against hordes of people - you need to distinguish yourself somehow when coming in with no/little experience.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering supergrecko&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Favorite programming language / stack?</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/190902201659424769/a_036b01dddf1d56d9587e4d6cf269912c.gif" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by supergrecko
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> C++, backed by cmake &amp; conan (for package management). Because of cmake + conan, CPP finally starts to feel relevant again. Big ups to the web-dev world for trail-blazing what a &#39;modern dev&#39; environment feels like.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering XEqualsPenguin&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What&#39;s the weirdest bug you&#39;ve encountered when working on a game?</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/178549503555534848/9b4bdcd18985adabbd285bedf5d04423.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by XEqualsPenguin
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> In a game - sounds are supposed to occur based on events. This is standard. What tends to happen is you cache the most commonly used sound in low memory. This means it&#39;s quick to access and you don&#39;t risk dropping audio due to missing it&#39;s frame targets. Welp, it&#39;s important to flush a cache in-between levels otherwise you have metallic footsteps on snow. That took me ages to figure out what the hell was going on - could have been poorly baked game data, the wrong event firing. Yeah, cache staleness. Ever since then, whenever a cache is involved that&#39;s always my first hunch</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering Megh&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  how did you get into the industry?</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/212841332182351872/b03a72a5ab1633d93073350871ccc772.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Megh
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> Aside from getting my computer science degree, I focused on building my portfolio of custom work. My brother and I used to make NeverWinter Nights 2 mods - one of them was actually awarded mod of the year by the community. Having something like this on my resume was really helpful in getting the attention of hiring managers.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering Zomatree&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What&#39;s one of your favorite technologies?</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/285130711348805632/ef3809ca1b312445e0c9240b45eed068.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Zomatree
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> Unity</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering <img class="emoji " alt="§" title="§" src="https://twemoji.maxcdn.com/2/72x72/a7.png" />&#171;&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What is your favourite programming language and why</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/300887251385188352/76ab9be88702e90cda361c06bdd15793.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by &#167;&#171;
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> C++ - it gives you access and means to do pretty much anything. This also comes with the caveat of <span class="pre pre--inline">you can ruin everything because of yourself</span>.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="👌" title="👌" src="https://twemoji.maxcdn.com/2/72x72/1f44c.png" />
+                                    <span class="chatlog__reaction-count">1</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="bloblul" title="bloblul" src="https://cdn.discordapp.com/emojis/584748768843268106.png" />
+                                    <span class="chatlog__reaction-count">3</span>
+                                </div>
+                        </div>
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering Gateway&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What was the most fulfilling project you&#39;ve worked on?</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/212318242247671808/a693acdaf7787c02b7f295041f737ff4.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Gateway
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> This is a complicated one. Title shipped: Battlefront 2 (honestly, it was a great game aside from all the &#39;other&#39; stuff that was a part of that game). Technical project: Creating a workflow to obtain back hundreds of engine improvements from a game team. Game teams will often have to modify engine code in order to 1) get functionality they are missing in order to satiate a feature 2) bug fixes. It&#39;s a massive exercise in coordination to identify meaningful changes, and connect the correct parties together to bring that change back into the mainline of the engine development. I oversaw this project for 2 years, and it was one of the most challenging but fulfilling things I&#39;ve ever worked on.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering Zenohm&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What gets you through the darkest days when the deadlines are approaching and you need to work harder than you feel you can.</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/150799801368313858/7d408800909c61c53cb317897ef35229.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Zenohm
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> Trying to deliver fun to people that buy the games I work on. It&#39;s a labour of love quite honestly.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering Djolo&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Do you find it difficult to manage your time? Any tips?</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/391255708743630848/0bf28d78a2601af40b37df2ccfbbc6f7.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Djolo
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> It can be at times when people constantly interrupt you to ask questions/for help. I&#39;ve found it important to do the following:
+1) write a very discrete list of what you want to get done in a day. 3-5 items.
+2) check in on the list half day - if you&#39;re off track don&#39;t be afraid to cancel meetings or notify folks that you need some heads-down time.
+
+Creating a small list gives you an honest representation of what you want to get done in the day, and declutters your mind as you won&#39;t be thinking about all the other things you should be doing.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering NastyGamer&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  When and how did you start coding?</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/245470898293833729/27c530ee3ed555d5dd0ffcf7f0859011.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by NastyGamer
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> When I was in grad 5, I wanted to create a game and the most approachable way I could fathom was by building it in a website. This was before google existed so it was a slog through trial and error. Learning javascript was non-trivial haha</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="😹" title="😹" src="https://twemoji.maxcdn.com/2/72x72/1f639.png" />
+                                    <span class="chatlog__reaction-count">3</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">7</span>
+                                </div>
+                        </div>
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering pos1tr0n&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  How do you overcome burnout?</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/393093317233082370/371585d3275045a0eb477758ba7cf046.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by pos1tr0n
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> Tough question - I still haven&#39;t found a great solution to this and am somewhat in a burnout stage now. What I&#39;ve found somewhat useful in the past is 1) exercise 2) take 3 weeks off in a row, where the first week is just staying at home, and the next two are spent somewhere else. 
+
+One piece of advice I picked up while I was working in Sweden was that in order to truly start separating your thoughts from work, you need to spend a week away from work. After that, you can then start to recover mentally.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering Discord&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  How do you come up with game ideas?</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/473740736526024714/8e866d87b2388853f39bb9cdeaf84cfe.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Discord
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> I don&#39;t - really talented people who are game designers do. It&#39;s a lot more science and system design than people give it credit for. Because of this, there is focused and concise training in this space.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering XEqualsPenguin&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Which do you think is more important, a believable premise/plot or easy-to-learn gameplay?</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/178549503555534848/9b4bdcd18985adabbd285bedf5d04423.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by XEqualsPenguin
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> Neither really - I think an incredible core gameplay loop will prevail above all. Rocket League is a fantastic example of a easy-to-learn-hard-to-master core gameplay loop that is addictive, easy to fit into a busy day, and fun. I&#39;m definitely not the authority on this though - this is just my opinion.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering KAZUHIRA&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Do you think 3D adventure games are do-able by one person only? Story and everything</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/269545661488168970/a8ee6a2ba01fcb04cff744428d6b09d3.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by KAZUHIRA
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> If you&#39;re using an engine - perhaps. You can get enough free assets off of the unreal/unity spaces where you can cobble together most of it. Your biggest challenge will be art/content.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering moss&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What one thing do you wish you could change about the gaming industry?</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/209448908806422528/6676823df5f17cc72936fad866ac5a19.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by moss
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers</strong>: Tough question. Fandom is a double-edged sword. It&#39;s nice that people care so much about the games the industry makes, but sometimes the vitriol we receive can be unbearable. I&#39;ve considered leaving the industry several times because of how hateful gamers can be when something doesn&#39;t align with their expectations.</span>
+
+                                <span class="chatlog__edited-timestamp" title="01-Sep-19 07:40 PM">(edited)</span>
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering RedKnight&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Have you ever wished certain technologies were more widely adopted in the games industry?</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/272683271559708672/455d02dbb32207a2dd5dda52e89a5aac.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by RedKnight
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> Oh boy... Yes. A million times yes. I can tell you that the games industry (from an engineering practice perspective) is almost always 5 years behind &quot;web&quot;. There is still constant infighting about package configuration management, and using modern source control. 
+
+I&#39;d like to see more 1) git 2) open source modern package systems used.
+
+Also, stop rewriting everything because we are <span class="pre pre--inline">special</span>.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering Kyrix&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What are some things you suggest to learn/practice that can help you in your professional career in jobs in the future?</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/161186477924024320/be6640baef85daa4241d9da77d379d86.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Kyrix
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> I&#39;ll answer this from a games perspective. 
+
+Technical
+1) Know algorithms and data structures - they are insanely important in games
+2) Math - most areas of games development requires an understanding of linear/calc.
+
+Soft
+1) in games you work with <span class="pre pre--inline">everyone</span>. Artists, QA, management - you need to be able to relate to folks who don&#39;t have an engineering background
+2) A hobby - having something else that you can grow and put effort into will prevent a lot of heartache in the future. Without hobbies, I&#39;ve seen people attach their entire identity to the work they do, and it&#39;s craft. You will be on a project that fails... that under-performs. If you don&#39;t have a life outside of work, this can be a huge blow to your morale &amp; confidence. Save yourself a lot of heartache and don&#39;t forget to be someone outside of your profession.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering sudonym&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  How did you create the marvel that is <img class="emoji " alt="blaze" title="blaze" src="https://cdn.discordapp.com/emojis/350426514262720514.png" />?</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/300520395478532096/a20f97ef5c6225f6aff740631374947b.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by sudonym
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> I was reading through the BBC news one day, and found this image of a kid who was starring right into my soul. I was mortified, frightened.... intrigued. I sent a screenshot to Fox and the rest is history. May god forgive us all.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                                    <span class="chatlog__reaction-count">49</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="🍆" title="🍆" src="https://twemoji.maxcdn.com/2/72x72/1f346.png" />
+                                    <span class="chatlog__reaction-count">2</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="wack" title="wack" src="https://cdn.discordapp.com/emojis/351499550579621899.png" />
+                                    <span class="chatlog__reaction-count">12</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="baguette_muncher" title="baguette_muncher" src="https://cdn.discordapp.com/emojis/608015918089633800.png" />
+                                    <span class="chatlog__reaction-count">23</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="wew_lad" title="wew_lad" src="https://cdn.discordapp.com/emojis/602593798748635136.png" />
+                                    <span class="chatlog__reaction-count">12</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="blazehaw" title="blazehaw" src="https://cdn.discordapp.com/emojis/582076019175849994.png" />
+                                    <span class="chatlog__reaction-count">19</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="ezalB" title="ezalB" src="https://cdn.discordapp.com/emojis/581632778924326953.png" />
+                                    <span class="chatlog__reaction-count">24</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="australianblaze" title="australianblaze" src="https://cdn.discordapp.com/emojis/586448753909694464.png" />
+                                    <span class="chatlog__reaction-count">24</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="blazesmart" title="blazesmart" src="https://cdn.discordapp.com/emojis/581630781668065322.png" />
+                                    <span class="chatlog__reaction-count">23</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="blaze" title="blaze" src="https://cdn.discordapp.com/emojis/350426514262720514.png" />
+                                    <span class="chatlog__reaction-count">46</span>
+                                </div>
+                        </div>
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering Zenohm&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Who would you call out as a hero, the person or people that helped you get where you are now and inspired you to keep going?</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/150799801368313858/7d408800909c61c53cb317897ef35229.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Zenohm
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> My older brother.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="🌟" title="🌟" src="https://twemoji.maxcdn.com/2/72x72/1f31f.png" />
+                                    <span class="chatlog__reaction-count">23</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="aww" title="aww" src="https://cdn.discordapp.com/emojis/527300173706166294.png" />
+                                    <span class="chatlog__reaction-count">10</span>
+                                </div>
+                        </div>
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering XEqualsPenguin&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  what do you think about ECS? Everyone I&#39;ve talked to loves it but I don&#39;t understand why.</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/178549503555534848/9b4bdcd18985adabbd285bedf5d04423.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by XEqualsPenguin
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> It&#39;s a nice way to think about game system design. It really focuses on SOLID principles - which is always a nice core methodology to follow. It also has a tremendous bias towards reusability, which saves a lot of time. Unity is effectively predicated on the component system - it&#39;s why it&#39;s such an easy thing to use IMO.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> Einhander - it&#39;s a masterful example in using audio to solicit an emotional response so strong that it engages the end user.
+Symphony of the Night - will always be a classic, and the benchmark for metroidvanias IMO.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering Vadim&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  if you could go back in time and change your occupation, would you?</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/240564618546642965/778a881801f1ad52ad0af9ca1a16cdfe.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Vadim
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> Nope. Best decision I ever made was switching my major from Chemical Engineering to CompSci.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering Datberry&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What do you think of your time as team leader and did you enjoy team leading more than actual development?</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/586299387211153419/399191993d197c0fc0ae7ef5b9aff073.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Datberry
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> I personally enjoy it more than doing actual development. The only catch that comes from that is you need to be able to step away from the gratification of bringing something into existence from nothing (the job of the developer) and get the catharsis of that through your team.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering Hope&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  A piece of advice you learnt that you could give to a programmer?</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/217914474353524736/a0a265de13a8d1ad8418a988d4de15ee.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Hope
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> Be open to being wrong. Don&#39;t be afraid of code reviews. Never attach your self worth to your code - it can always be improved.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="👍" title="👍" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png" />
+                                    <span class="chatlog__reaction-count">11</span>
+                                </div>
+                        </div>
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering Akko.isBestGirl(){return true;}&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What&#39;s your favorite thing about your work?</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/302134543639511050/70805737040170e66facb1407dc7c5cc.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Akko.isBestGirl(){return true;}
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> The people I work with. The games industry attracts a lot of really energetic, and exciting folks.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering moss&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What&#39;s your favorite ice cream flavor?</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/209448908806422528/6676823df5f17cc72936fad866ac5a19.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by moss
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> Pistachio</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="🍦" title="🍦" src="https://twemoji.maxcdn.com/2/72x72/1f366.png" />
+                                    <span class="chatlog__reaction-count">11</span>
+                                </div>
+                        </div>
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering Zenohm&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  How do you do proper estimation of what you can produce in a given timeframe, and when have you pushed back on a timeframe you were given?</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/150799801368313858/7d408800909c61c53cb317897ef35229.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Zenohm
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> Experience is the most useful heuristic here, but it will still usually be way off (sorry development directors <img class="emoji " alt="🙂" title="🙂" src="https://twemoji.maxcdn.com/2/72x72/1f642.png" /> ).  I&#39;ve pushed back many times - It&#39;s a regular occurrence in my line of work to go back to a product owner/producer and give them the trade-off of what they initially asked for, and why it will take way longer than initially thought. It&#39;s important to give people the set of options, and not compromise yourself by having to work endlessly to match an unrealistic ask.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering Shady Mike&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What is you opinion on the discussion of OOP vs. ECS?</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/198410655869435904/b02e869ee90a9815d49f0010f2f45ad3.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Shady Mike
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> They both have their place. Most games/game engines are built upon a philosophical model of ECS, but have tonnes of OOP sprinkled throughout.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> I know it&#39;s an unsavoury answer to the question, but in reality there is no pure form of these in any game. Sometimes you need a component rooted entity because it vastly cuts down on your cost of development, and sometimes polymorphism is the clear solution.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering hl3c&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What math classes have you taken in the past, and up to what level of math are you currently comfortable with?</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/434811689024880651/579f86fabf2e54abd4e7b7de3f111366.png" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by hl3c
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> Abstract algebra, discrete match, statistics, calc. I am comfortable enough with calculus to do DSP regularly, and need my fundamentals of linear algebra whenever working in the gameplay space.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering Exouxas&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Do you have any rituals before starting a coding session?</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/208065828803969025/a_222f768a379d509af8f21a4ffa84bc1f.gif" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Exouxas
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> Coffee.</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="☕" title="☕" src="https://twemoji.maxcdn.com/2/72x72/2615.png" />
+                                    <span class="chatlog__reaction-count">31</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="coffeeblob" title="coffeeblob" src="https://cdn.discordapp.com/emojis/611124059660615680.png" />
+                                    <span class="chatlog__reaction-count">28</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="Coffee" title="Coffee" src="https://cdn.discordapp.com/emojis/436710993792598036.png" />
+                                    <span class="chatlog__reaction-count">24</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="whale_coffee" title="whale_coffee" src="https://cdn.discordapp.com/emojis/605134390259089448.png" />
+                                    <span class="chatlog__reaction-count">21</span>
+                                </div>
+                        </div>
+                        <div class="chatlog__content">
+                            <span class="markdown"></span>
+
+                        </div>
+
+
+                        <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <span class="markdown">ninetyninenumbers is answering Xetera&#39;s Question:</span>
+                                            </div>
+
+                                        <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  How much college level math do you use when it comes to creating games at your job? Do you use tools that already have the math portion of the problem solved or do you often have to create new solutions to specific problems using your math knowledge?</span></div>
+
+                                    </div>
+
+                                </div>    
+
+
+                                    <div class="chatlog__embed-footer">
+                                                <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/140862798832861184/a_edf7782741217f87a3cd1ab5d98f30b2.gif" />
+                                        
+                                        <span class="chatlog__embed-footer-text">
+                                                    Asked by Xetera
+                                                    
+
+                                        </span>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="chatlog__content">
+                            <span class="markdown"><strong>ninetyninenumbers:</strong> Me personally, I use an OK amount. Many other folks I work with use incredibly advanced mathematics for their work. Being on the engine team requires you to build the fundamental systems that people rely on, which often requires a great deal of writing math-related code. 
+The closer in the development loop you get to the &#39;game&#39; the less math you need on average (as you&#39;ll rely on the engine components to do the heavy lifting). 
+
+tldr; tools engineers in game companies need lots of math. Engineers writing gameplay code will need a lot of linear algebra.</span>
+
+                        </div>
+
+
+
+            </div>
+        </div>
+        <div class="chatlog__message-group">
+            <div class="chatlog__author-avatar-container">
+                <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/335628039302021121/a_30232e21b6efa0e86b0b107b56f0af71.gif" />
+            </div>            
+            <div class="chatlog__messages">
+                <span class="chatlog__author-name" title="Elliott#0001" data-user-id="335628039302021121">Elliott</span>
+                <span class="chatlog__timestamp">01-Sep-19 01:46 PM</span>
+
+                        <div class="chatlog__content">
+                            <span class="markdown">(<strong>That concludes today&#39;s AMA, massive thanks to <span class="mention" title="ninetyninenumbers#6600">@ninetyninenumbers</span> for being willing to answer our questions, and our community for participating!</strong>)</span>
+
+                        </div>
+
+
+
+                        <div class="chatlog__reactions">
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="👌" title="👌" src="https://twemoji.maxcdn.com/2/72x72/1f44c.png" />
+                                    <span class="chatlog__reaction-count">2</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="wait" title="wait" src="https://cdn.discordapp.com/emojis/612394391746773048.png" />
+                                    <span class="chatlog__reaction-count">13</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="happycat" title="happycat" src="https://cdn.discordapp.com/emojis/505035663628959755.gif" />
+                                    <span class="chatlog__reaction-count">19</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="yay" title="yay" src="https://cdn.discordapp.com/emojis/536427435282006016.gif" />
+                                    <span class="chatlog__reaction-count">17</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="aww" title="aww" src="https://cdn.discordapp.com/emojis/527300173706166294.png" />
+                                    <span class="chatlog__reaction-count">22</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="rooexcited" title="rooexcited" src="https://cdn.discordapp.com/emojis/581332159852183575.gif" />
+                                    <span class="chatlog__reaction-count">15</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="wew_lad" title="wew_lad" src="https://cdn.discordapp.com/emojis/602593798748635136.png" />
+                                    <span class="chatlog__reaction-count">5</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="eatmyass" title="eatmyass" src="https://cdn.discordapp.com/emojis/613131582362091530.gif" />
+                                    <span class="chatlog__reaction-count">3</span>
+                                </div>
+                                <div class="chatlog__reaction">
+                                    <img class="emoji emoji--small" alt="pogslide" title="pogslide" src="https://cdn.discordapp.com/emojis/581567621359599616.gif" />
+                                    <span class="chatlog__reaction-count">6</span>
+                                </div>
+                        </div>
+            </div>
+        </div>
+</div>
+
+</body>
+</html>

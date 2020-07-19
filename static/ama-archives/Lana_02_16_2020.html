@@ -1,0 +1,2424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>The Programmer&#39;s Hangout - Lana Q&A - Feb 16th, 2020</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <style>
+        /* General */
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/6c6374bad0b0b6d204d8d6dc4a18d820.woff);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/e8acd7d9bf6207f99350ca9f9e23b168.woff);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/3bdef1251a424500c1b3a78dea9b7e57.woff);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/be0060dafb7a0e31d2a1ca17c0708636.woff);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/8e12fb4f14d9c4592eb8ec9f22337b04.woff);
+    font-weight: 700;
+}
+
+body {
+    font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    object-fit: contain;
+}
+
+.markdown {
+    white-space: pre-wrap;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+}
+
+.spoiler {
+    border-radius: 3px;
+}
+
+.quote {
+    margin: 0.5em 0;
+    padding-left: 0.6em;
+    border-left: 4px solid;
+    border-radius: 3px;
+}
+
+.pre {
+    font-family: "Consolas", "Courier New", Courier, monospace;
+}
+
+.pre--multiline {
+    margin-top: 0.25em;
+    padding: 0.5em;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+.pre--inline {
+    padding: 2px;
+    border-radius: 3px;
+    font-size: 0.85em;
+}
+
+.mention {
+    border-radius: 3px;
+    padding: 0 2px;
+    color: #7289da;
+    background: rgba(114, 137, 218, .1);
+    font-weight: 500;
+}
+
+.emoji {
+    width: 1.25em;
+    height: 1.25em;
+    margin: 0 0.06em;
+    vertical-align: -0.4em;
+}
+
+.emoji--small {
+    width: 1em;
+    height: 1em;
+}
+
+.emoji--large {
+    width: 2.8em;
+    height: 2.8em;
+}
+
+/* Preamble */
+
+.preamble {
+    display: grid;
+    margin: 0 0.3em 0.6em 0.3em;
+    max-width: 100%;
+    grid-template-columns: auto 1fr;
+}
+
+.preamble__guild-icon-container {
+    grid-column: 1;
+}
+
+.preamble__guild-icon {
+    max-width: 88px;
+    max-height: 88px;
+}
+
+.preamble__entries-container {
+    grid-column: 2;
+    margin-left: 0.6em;
+}
+
+.preamble__entry {
+    font-size: 1.4em;
+}
+
+.preamble__entry--small {
+    font-size: 1em;
+}
+
+/* Chatlog */
+
+.chatlog {
+    max-width: 100%;
+}
+
+.chatlog__message-group {
+    display: grid;
+    margin: 0 0.6em;
+    padding: 0.9em 0;
+    border-top: 1px solid;
+    grid-template-columns: auto 1fr;
+}
+
+.chatlog__author-avatar-container {
+    grid-column: 1;
+    width: 40px;
+    height: 40px;
+}
+
+.chatlog__author-avatar {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.chatlog__messages {
+    grid-column: 2;
+    margin-left: 1.2em;
+    min-width: 50%;
+}
+
+.chatlog__author-name {
+    font-weight: 500;
+}
+
+.chatlog__timestamp {
+    margin-left: 0.3em;
+    font-size: 0.75em;
+}
+
+.chatlog__message {
+    padding: 0.1em 0.3em;
+    margin: 0 -0.3em;
+    background-color: transparent;
+    transition: background-color 1s ease;
+}
+
+.chatlog__content {
+    font-size: 0.95em;
+    word-wrap: break-word;
+}
+
+.chatlog__edited-timestamp {
+    margin-left: 0.15em;
+    font-size: 0.8em;
+}
+
+.chatlog__attachment-thumbnail {
+    margin-top: 0.3em;
+    max-width: 50%;
+    max-height: 500px;
+    border-radius: 3px;
+}
+
+.chatlog__embed {
+    display: flex;
+    margin-top: 0.3em;
+    max-width: 520px;
+}
+
+.chatlog__embed-color-pill {
+    flex-shrink: 0;
+    width: 0.25em;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.chatlog__embed-content-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em 0.6em;
+    border: 1px solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.chatlog__embed-content {
+    display: flex;
+    width: 100%;
+}
+
+.chatlog__embed-text {
+    flex: 1;
+}
+
+.chatlog__embed-author {
+    display: flex;
+    margin-bottom: 0.3em;
+    align-items: center;
+}
+
+.chatlog__embed-author-icon {
+    margin-right: 0.5em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.chatlog__embed-author-name {
+    font-size: 0.875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-title {
+    margin-bottom: 0.2em;
+    font-size: 0.875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-description {
+    font-weight: 500;
+    font-size: 0.85em;
+}
+
+.chatlog__embed-fields {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chatlog__embed-field {
+    flex: 0;
+    min-width: 100%;
+    max-width: 506px;
+    padding-top: 0.6em;
+    font-size: 0.875em;
+}
+
+.chatlog__embed-field--inline {
+    flex: 1;
+    flex-basis: auto;
+    min-width: 150px;
+}
+
+.chatlog__embed-field-name {
+    margin-bottom: 0.2em;
+    font-weight: 600;
+}
+
+.chatlog__embed-field-value {
+    font-weight: 500;
+}
+
+.chatlog__embed-thumbnail {
+    flex: 0;
+    margin-left: 1.2em;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-image-container {
+    margin-top: 0.6em;
+}
+
+.chatlog__embed-image {
+    max-width: 500px;
+    max-height: 400px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-footer {
+    margin-top: 0.6em;
+}
+
+.chatlog__embed-footer-icon {
+    margin-right: 0.2em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.chatlog__embed-footer-text {
+    font-size: 0.75em;
+    font-weight: 500;
+}
+
+.chatlog__reactions {
+    display: flex;
+}
+
+.chatlog__reaction {
+    display: flex;
+    align-items: center;
+    margin: 0.35em 0.1em 0.1em 0.1em;
+    padding: 0.2em 0.35em;
+    border-radius: 3px;
+}
+
+.chatlog__reaction-count {
+    min-width: 9px;
+    margin-left: 0.35em;
+    font-size: 0.875em;
+}
+
+.chatlog__bot-tag {
+    position: relative;
+    top: -.2em;
+    margin-left: 0.3em;
+    padding: 0.05em 0.3em;
+    border-radius: 3px;
+    vertical-align: middle;
+    line-height: 1.3;
+    background: #7289da;
+    color: #ffffff;
+    font-size: 0.625em;
+    font-weight: 500;
+}
+
+/* Postamble */
+
+.postamble {
+    margin: 1.4em 0.3em 0.6em 0.3em;
+    padding: 1em;
+    border-top: 1px solid;
+}
+    </style>
+    <style>
+        /* General */
+
+body {
+    background-color: #36393e;
+    color: #dcddde;
+}
+
+a {
+    color: #0096cf;
+}
+
+.spoiler {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.quote {
+    border-color: #4f545c;
+}
+
+.pre {
+    background-color: #2f3136 !important;
+}
+
+.pre--multiline {
+    border-color: #282b30 !important;
+    color: #b9bbbe !important;
+}
+
+/* === Preamble === */
+
+.preamble__entry {
+    color: #ffffff;
+}
+
+/* Chatlog */
+
+.chatlog__message-group {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.chatlog__author-name {
+    color: #ffffff;
+}
+
+.chatlog__timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__message--highlighted {
+    background-color: rgba(114, 137, 218, 0.2) !important;
+}
+
+.chatlog__message--pinned {
+    background-color: rgba(249, 168, 37, 0.05);
+}
+
+.chatlog__edited-timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__embed-color-pill--default {
+    background-color: rgba(79, 84, 92, 1);
+}
+
+.chatlog__embed-content-container {
+    background-color: rgba(46, 48, 54, 0.3);
+    border-color: rgba(46, 48, 54, 0.6);
+}
+
+.chatlog__embed-author-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-author-name-link {
+    color: #ffffff;
+}
+
+.chatlog__embed-title {
+    color: #ffffff;
+}
+
+.chatlog__embed-description {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-field-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-field-value {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-footer {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__reaction {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.chatlog__reaction-count {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Postamble */
+
+.postamble {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.postamble__entry {
+    color: #ffffff;
+}
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/solarized-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.pre--multiline').forEach(block => hljs.highlightBlock(block));
+        });
+    </script>
+
+    <script>
+        function scrollToMessage(event, id) {
+            var element = document.getElementById('message-' + id);
+
+            if (element) {
+                event.preventDefault();
+
+                element.classList.add('chatlog__message--highlighted');
+
+                window.scrollTo({
+                    top: element.getBoundingClientRect().top - document.body.getBoundingClientRect().top - (window.innerHeight / 2),
+                    behavior: 'smooth'
+                });
+
+                window.setTimeout(function() {
+                    element.classList.remove('chatlog__message--highlighted');
+                }, 2000);
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="preamble">
+    <div class="preamble__guild-icon-container">
+        <img class="preamble__guild-icon" src="https://cdn.discordapp.com/icons/244230771232079873/a_34da0ee46c9ed9799a636a976c896361.png" alt="Guild icon" />
+    </div>
+    <div class="preamble__entries-container">
+        <div class="preamble__entry">The Programmer&#39;s Hangout</div>
+        <div class="preamble__entry">Lana Q&A - Feb 16th, 2020</div>
+
+
+    </div>
+</div>
+
+<div class="chatlog">
+    <div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Nano#8992" data-user-id="429275180309807134" style="color: #E91E63">Nano</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">16-Feb-20 11:03 PM</span>
+
+            <div class="chatlog__message " data-message-id="678738231797219328" id="message-678738231797219328">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering Toby Larone&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  You said that you consider yourself a generalist. What do you do to keep your knowledge base wide and deep enough, whilst keeping on top of new topics?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/227810440560902144/477e803cf500d080d99653b7d95213e6.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Toby Larone
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678738232258592814" id="message-678738232258592814">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> A lot of this comes from practical experience. You start by learning not just the direct piece of code that you&#39;re working, but those that connect to it, and then expand out. Be open to asking questions of other people (e.g., why did we choose to use X for this task? why did it suit us better than Y). Drawing on the knowledge of others is very valuable. There is also the occasional blog post and reddit browsing built in, but usually I&#39;m keeping up with the technologies we have in place, and how we can add/best make use of those</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="💯" title="💯" src="https://twemoji.maxcdn.com/2/72x72/1f4af.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678738696257667100" id="message-678738696257667100">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering botus&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What is the most valuable thing you&#39;ve learned so far in your career?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/412540774694256640/b32cb9384302e745d75faee503c55431.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by botus
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678738696853258293" id="message-678738696853258293">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> To always be learning. Never be afraid of owning up to what you don&#39;t know. Once you&#39;re willing to do that, you are open to learning about it, and can gain that knowledge a lot quicker than trying to fudge it.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="💯" title="💯" src="https://twemoji.maxcdn.com/2/72x72/1f4af.png" />
+                            <span class="chatlog__reaction-count">9</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678739281799544902" id="message-678739281799544902">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering Elliott&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  In your mind, what&#39;s one of the most underrated soft skills in the programming industry?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/335628039302021121/a_30232e21b6efa0e86b0b107b56f0af71.gif" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Elliott
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678739282176770059" id="message-678739282176770059">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> Never underestimate the power of people skills, mostly communication, and using the knowledge/skills of others. For me, the 10x developer isn&#39;t the one that locks themselves in a room and pumps out code. The 10x developer is the one that notices department X and department Y are both building the same thing, and can then draw on the knowledge of the people involved in those projects, and coordinate them working together. Rather than duplicated effort from those teams you now have a single project, probably built better because it&#39;s drawn on the best of both teams.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="💯" title="💯" src="https://twemoji.maxcdn.com/2/72x72/1f4af.png" />
+                            <span class="chatlog__reaction-count">9</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="😂" title="😂" src="https://twemoji.maxcdn.com/2/72x72/1f602.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678739733492400128" id="message-678739733492400128">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering Sey&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  How many career related books do you read in a year?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/185286961295130624/6b1e307e3653d8e08aaf47948a5db83f.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Sey
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678739734062694413" id="message-678739734062694413">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> I&#39;m actually not a big book reader. I had to ditch my physical book collection when I went from Australia to US. Most of my career info comes from managers and others around me. Talking regularly to your manager or peers, and asking how you can do a better job. Also keeping up with tech interview skills by interviewing regularly (both as an interviewee and interviewer)</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="😂" title="😂" src="https://twemoji.maxcdn.com/2/72x72/1f602.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678740254529683476" id="message-678740254529683476">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering botus&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  How do you manage your work-life balance?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/412540774694256640/b32cb9384302e745d75faee503c55431.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by botus
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678740254794055701" id="message-678740254794055701">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> Quite simply, I don&#39;t force myself to do something if it&#39;s not fun. If I get home, and I don&#39;t feel like coding, then I don&#39;t. I&#39;m also a big supporter of allowing work from home and flexible hours (it&#39;s surprising how refreshing it can be to skip the morning standup once in a while). Along with this the idea that you should evaluate someone by what their output is rather than time they spend in an office.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="👍" title="👍" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png" />
+                            <span class="chatlog__reaction-count">11</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678740691345473536" id="message-678740691345473536">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering Lgneous&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What field do you work in and is there another that you would like to experience ?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/154552940680445952/a_fa827cd746e2b29f90f42e393d453c32.gif" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Lgneous
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678740691794526214" id="message-678740691794526214">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> The bulk of my work has been on payments, and now it&#39;s in fintech. The industry I work is a very low ranking factor in where I would choose to work. I tend to be someone where if you throw em an interesting technical challenge, I don&#39;t really care what industry it is in. So, there isn&#39;t really an industry I&#39;d try to get into.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🤷‍♂️" title="🤷‍♂️" src="https://twemoji.maxcdn.com/2/72x72/1f937-200d-2642.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678741085345939466" id="message-678741085345939466">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering Ping | Pong&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What is the most challenging problem you&#39;ve faced in your career?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/394574967448141826/e792a772055f043bb25952c705f283f3.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Ping | Pong
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678741085853581316" id="message-678741085853581316">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> The most challenging problem has been starting a new position at a new workplace and being expected to be a senior technical figure. You enter a work place with a bunch of people who know more about what you&#39;re working on than you do, but there&#39;s an expectation that you&#39;ll be able to ramp up and become the person they come to for advice/guidance.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🙂" title="🙂" src="https://twemoji.maxcdn.com/2/72x72/1f642.png" />
+                            <span class="chatlog__reaction-count">12</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="HR_RooWOW" title="HR_RooWOW" src="https://cdn.discordapp.com/emojis/594177649266524160.gif" />
+                            <span class="chatlog__reaction-count">7</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="👌" title="👌" src="https://twemoji.maxcdn.com/2/72x72/1f44c.png" />
+                            <span class="chatlog__reaction-count">6</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678741481288237066" id="message-678741481288237066">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering Shone&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  I&#39;ve seen you a lot in <span class="mention">#career-advice</span> so which one advice would you give to a person looking to establish their career path?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/394888774812958723/74263e9059f2d853dde83b7e4e28ee1c.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Shone
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678741481766256651" id="message-678741481766256651">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> Don&#39;t be afraid to go for what you want. If you want that dream job, apply for it, the worst they can do is say no. Otherwise focus on the always learning mindset. Build connections and knowledge. Don&#39;t be afraid to chase better opportunities when they arise.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="👍" title="👍" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png" />
+                            <span class="chatlog__reaction-count">6</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678741900303269890" id="message-678741900303269890">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering botus&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Did you have any particular role models and why?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/412540774694256640/b32cb9384302e745d75faee503c55431.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by botus
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678741902639628310" id="message-678741902639628310">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> I like to take bits and pieces from all those I see working around me. Our head engineer? why has he been successful, how does he make people around him more productive. That manager? What are their strengths, is it people, planning, etc. Then try and work out how I can apply that to my skillset.</span>
+
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="678742273768423457" id="message-678742273768423457">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering Kami&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Have you ever been in a burnout stage? If yes, how do you deal with it?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/246407470606581761/1af002b26723283df765ddb9826d4362.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Kami
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">3</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="👍" title="👍" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678742274783576074" id="message-678742274783576074">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> I think everyone goes through stages where they are getting more or less joy out of programming. There are various tricks I use to try and &quot;find the joy&quot; again. This could be a personal project. This could be taking a day, or even a couple of weeks off. It could be talking to the manager and finding a new challenge in the workplace.</span>
+
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="678742681404571648" id="message-678742681404571648">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering Ping | Pong&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  If you weren&#39;t in this line of work what else could you see yourself doing?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/394574967448141826/e792a772055f043bb25952c705f283f3.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Ping | Pong
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678742681584795710" id="message-678742681584795710">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> Honestly, no idea. I&#39;ve been very lucky that computers happen to be what I&#39;m good at. If I had been born outside this time frame, I have no idea. Probably something like an accountant, or since I&#39;m from a wine area, picking grapes.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🍷" title="🍷" src="https://twemoji.maxcdn.com/2/72x72/1f377.png" />
+                            <span class="chatlog__reaction-count">5</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🍇" title="🍇" src="https://twemoji.maxcdn.com/2/72x72/1f347.png" />
+                            <span class="chatlog__reaction-count">4</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="💰" title="💰" src="https://twemoji.maxcdn.com/2/72x72/1f4b0.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678744246513172480" id="message-678744246513172480">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering Zenohm&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What has your experience been, as a woman in an industry that is largely male. From university to full-time, what has it been like?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/150799801368313858/8359d688b7bce0e0389c5f0b8f4ed1ca.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Zenohm
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678744246848585749" id="message-678744246848585749">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> For recent workplaces, diversity and inclusion have been big focuses in the work place. This means a more balanced workplace and a lot of materials that focus on implicit bias and the like. Honestly, a lot of the tools for dealing with these kinds of bias are useful when dealing with anybody. e.g., value others opinions (make sure to listen, don&#39;t cut them off, etc). I think there is still work that can be done to make sure the reasons for the gender imbalance are reasonable and not the results of factors like gender (through schooling, college, and the workplace). It&#39;s not something that affects me day to day these days, but as an industry we can always be aiming to be the best we can be.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="💯" title="💯" src="https://twemoji.maxcdn.com/2/72x72/1f4af.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="👌" title="👌" src="https://twemoji.maxcdn.com/2/72x72/1f44c.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678744920273453087" id="message-678744920273453087">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering Kokoden&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  How do you approach high-pressure situations when everything goes wrong?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/199340460638994432/1143e8bfea926cc739dbc3ca6747459b.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Kokoden
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678744920835620896" id="message-678744920835620896">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> I have this weird reaction to others people stress, in that it calms me. This is incredibly useful, so do that, lol.
+If everything is going wrong it&#39;s important to keep a level head and don&#39;t forget things like team work, and to analyze things objectively. One of the biggest issues I&#39;ve seen when things go bad, is people getting defensive with attitudes like &quot;it&#39;s not my code that is broken&quot;. This attitude is not helpful when things need to be solved. If the factors are pointing to your code, accept that maybe it is your code. Look into why, or find the reasons that can point towards the actual problem (important, the actual problem, not just away from your code).</span>
+
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="678745293675692062" id="message-678745293675692062">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering Ping | Pong&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What is your favorite non-programming related pastime?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/394574967448141826/e792a772055f043bb25952c705f283f3.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Ping | Pong
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678745294191591424" id="message-678745294191591424">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> Sports. I can follow most sports. Cooking when the mood strikes.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⛹️" title="⛹️" src="https://twemoji.maxcdn.com/2/72x72/26f9.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🏃" title="🏃" src="https://twemoji.maxcdn.com/2/72x72/1f3c3.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678745806521761812" id="message-678745806521761812">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering Toby Larone&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What&#39;s the biggest mistake you&#39;ve made during your career? What did you learn from it?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/227810440560902144/477e803cf500d080d99653b7d95213e6.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Toby Larone
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678745807213821990" id="message-678745807213821990">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> I&#39;m going to go for the biggest almost mistake. I almost deleted the entire credit card database from our ecommerce company. A script was built, I was told it was tested, and I blindly rubber stamped it as good to go to production. Luckily our DBA caught the issue before this was actually run. The lesson here was to always make sure you&#39;re a valuable part of the process. Code reviews pick up a lot of bugs, and blindly green lighting something you don&#39;t understand negates that value completely</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="👍" title="👍" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png" />
+                            <span class="chatlog__reaction-count">8</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="oof" title="oof" src="https://cdn.discordapp.com/emojis/631219821522190344.png" />
+                            <span class="chatlog__reaction-count">3</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678746992003776532" id="message-678746992003776532">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering Kokoden&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>   Have you ever worked in a multidisciplinary team (with both tech and non-tech members)? If yes, what was it like?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/199340460638994432/1143e8bfea926cc739dbc3ca6747459b.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Kokoden
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678746992117284866" id="message-678746992117284866">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> I don&#39;t think I ever haven&#39;t. Even if the non-tech people aren&#39;t directly part of your team, they are always factors. There are always people outside your team of both tech and non-tech variety that need have some understanding of what&#39;s happening. It&#39;s hard for me to say what it&#39;s like, since it just seems to be the normal to me, lol.
+I&#39;d say a valuable skill to learn here is to be able to distill information down to what a person needs to know, and being clear about what the purpose of a communication is (is it a status update? is it requesting an action from someone? by when?). As a concrete example, I needed to be unblocked on a task, and needed a higher up to do this. I wrote this long email explaining the why, and what was blocked, and why we needed their help. After sending it my direct manager (who was cc&#39;d) asked me, &quot;but what do you want them to do about it?&quot;. I would have been better off writing a two sentence email being explicit about what I needed them to do. It takes into account their time, get straight to an action, and skips all the context they didn&#39;t need.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="👍" title="👍" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png" />
+                            <span class="chatlog__reaction-count">3</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678747447488675865" id="message-678747447488675865">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering Gh0sticF0rm&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  How satisfied are you with your current career path ?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/325879975058210818/bb901d0bbaf85376e65a6a3ca7a4ef21.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Gh0sticF0rm
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678747448356765740" id="message-678747448356765740">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> I&#39;m quite satisfied. I&#39;ve never been that interested in the managing of people&#39;s careers and that kind of thing. So, I&#39;ve stuck on the engineering (individual contributor) path. I&#39;ve managed to work with a wide range of people and try and learn a lot from them.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="OPFloatHeartsPink" title="OPFloatHeartsPink" src="https://cdn.discordapp.com/emojis/674578612078379008.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="BraveryHearts" title="BraveryHearts" src="https://cdn.discordapp.com/emojis/559353643048894474.gif" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678748377550422036" id="message-678748377550422036">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering spirit_warriors&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What are your perspectives on being a generalist? vs a Specialist? Are there any nuances or subtleties between the two (in relation to what they do, their job promotion prospects, and mindset?)</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/185225168195551232/2c828ccb39001773569a83c3bbbcfd25.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by spirit_warriors
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678748378120585267" id="message-678748378120585267">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> There&#39;s a place for both, and both should be equally valued. A work place should have a balance of both. To move up the promotion ladder the main question to be able to answer is, how do you provide value to the business. There are many ways to do this. For a generalist, this is having a wide knowledge and being able to jump in and understand what&#39;s needed and make technical decisions on projects that span a wide range of teams. For a specialist, this is having the very deep knowledge or being the expert on something key within the business. For example, maybe you&#39;re the expert on the Fraud machine learning models. Maybe you&#39;re the expert that understands the nuances of how each of our banks expects to have money transferred and the archaic formulas they use. Both provide value, just in different ways.</span>
+
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="678748911061434398" id="message-678748911061434398">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering botus&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What are some skills you hope to improve on over the next six months?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/412540774694256640/b32cb9384302e745d75faee503c55431.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by botus
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678748911573139497" id="message-678748911573139497">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> I&#39;m currently focusing on soft skills. My current work place is a lot more in person (i.e., everyone in the same office) than I&#39;m used to. So, I&#39;m trying to be more willing to utilize in person communication (whereas typically I&#39;d go for IM or email). I&#39;m also trying to work out how to best introduce the remote/wfh mindset (i.e., to get them used to always having zoom, and more willing to do stuff via IM or email). A little bit of a contradiction, but both will be useful.</span>
+
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="678749613687177216" id="message-678749613687177216">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering zeta&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Do you have any must-reads for people looking to learn CS?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/311626962873614336/0d372e3778867cfb7a7df6033132d367.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by zeta
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🤢" title="🤢" src="https://twemoji.maxcdn.com/2/72x72/1f922.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678749614618312715" id="message-678749614618312715">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> I don&#39;t have any specific recommendations. I think if you do your research you can find which books are highly recommended and rated. I&#39;ve always liked books like the pragmatic programmer or code complete. I think just reading anything is valuable if you keep an open and questioning mind about it. Not a big fan of taking anything as gospel, lol (guidelines are good, rules, not so much)</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🤢" title="🤢" src="https://twemoji.maxcdn.com/2/72x72/1f922.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678750072707612682" id="message-678750072707612682">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering laval&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Do you consider yourself an engineer? And as such, do you spend much time understanding the background of the problem in order to come up with a better design, or do you take the specification rigidly as-is and only implement what it asks and how it is asked?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/539547506971770881/11cd3ea87428527a1cc5092e289b9410.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by laval
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🤢" title="🤢" src="https://twemoji.maxcdn.com/2/72x72/1f922.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678750072799887363" id="message-678750072799887363">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> I do consider myself an engineer. I do spend a lot of time understanding the problem and coming up with the design. And then also modifying and adapting that design as projects progress. I never take a specification as is (whether I wrote it or not, it&#39;s open for comments/discussion). And I would never want a specification to be rigid. The real world is messy and things change and get missed, the specification should be able to change and adapt as new information comes up.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🤢" title="🤢" src="https://twemoji.maxcdn.com/2/72x72/1f922.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678750839829037056" id="message-678750839829037056">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering Kokoden&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What is one mistake you see new programmers making more than others?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/199340460638994432/1143e8bfea926cc739dbc3ca6747459b.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Kokoden
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🤢" title="🤢" src="https://twemoji.maxcdn.com/2/72x72/1f922.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678750840424759344" id="message-678750840424759344">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> Using <span class="pre pre--inline">scanner.nextInt()</span>, and then not doing a <span class="pre pre--inline">scanner.nextLine()</span> after it. Scanner is the bane of university Java it seems (never used Scanner until I answered questions on TPH).
+More seriously, I&#39;d consider the worst beginner mistake to be programming by trial and error. That stage when things are getting desperate and they just want things to work. Once you stop thinking and start just changing things and hoping, then you often end up moving away from the solution as you chase the wrong problems and create more for yourself.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="👍" title="👍" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png" />
+                            <span class="chatlog__reaction-count">6</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="blaze" title="blaze" src="https://cdn.discordapp.com/emojis/350426514262720514.png" />
+                            <span class="chatlog__reaction-count">6</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="what" title="what" src="https://cdn.discordapp.com/emojis/442834419632570368.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🤢" title="🤢" src="https://twemoji.maxcdn.com/2/72x72/1f922.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678751331615375400" id="message-678751331615375400">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering ddivad&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What&#39;s your favourite thing about TPH?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/394484823944593409/a_015f472846fdfb80a7e28dfb38ca697e.gif" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by ddivad
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">3</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🤢" title="🤢" src="https://twemoji.maxcdn.com/2/72x72/1f922.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678751332341121024" id="message-678751332341121024">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> My favorite thing about TPH has been learning by teaching/explaining. I think having to explain a concept to someone results in you learning more about it. You find different analogies and learn to explain it on different levels (e.g., higher/lower levels) and to use different terms based upon the knowledge of the learner.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🤢" title="🤢" src="https://twemoji.maxcdn.com/2/72x72/1f922.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678752726317924362" id="message-678752726317924362">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering Mutex&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Can you give us an example of a problem that you have solved, and how in that situation being a generalist was an advantage over being a specialist?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/298267625480519693/4c78ac0cb1fb3c04624e5e9119cb06ba.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Mutex
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🤢" title="🤢" src="https://twemoji.maxcdn.com/2/72x72/1f922.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678752726670114848" id="message-678752726670114848">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> Being a generalist is very handy in a microservices environment. Often when working with payments a change would affect many systems (e.g., our checkout service, our billing records storage service, our payments service). When the checkout team says, you proposed that we change X in our service, but this is going to take too long, you are able to contribute a wider range of solutions. e.g., maybe we can change something in the billing records storage service instead. Maybe the checkout service missed that they should actually be calling out to the payments service at some point rather than doing something themselves.
+On a more tech related answer, was working with credit cards on PCI compliance. PCI can cover everything from your firewalls, load balancers, hosts, networking, software, databases, encryption, etc. Being able to explain exactly how a credit card passes through all hardware/software is essential for the auditors. Also with things like, if we want to add another data center, how do we configure or firewalls/networking/etc to make this still PCI compliant.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🤢" title="🤢" src="https://twemoji.maxcdn.com/2/72x72/1f922.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678753069915177015" id="message-678753069915177015">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering Ping | Pong&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What is your stance on telework?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/394574967448141826/e792a772055f043bb25952c705f283f3.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Ping | Pong
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🤢" title="🤢" src="https://twemoji.maxcdn.com/2/72x72/1f922.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678753070347452447" id="message-678753070347452447">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> I&#39;m hugely in favor of allowing it. But in allowing it you need to recognize and adapt to the challenges. These may be async communication, the lack of context you get from sometimes just over hearing something, etc. It can really test out communication skills and your ability to unblock yourself when stuck on a task.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🤢" title="🤢" src="https://twemoji.maxcdn.com/2/72x72/1f922.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678754056805679135" id="message-678754056805679135">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering Toby Larone&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Out of everything that you&#39;ve covered in your career or projects outside of work, what area would you consider yourself to be most knowledgeable in, and what area would you most like to improve in?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/227810440560902144/477e803cf500d080d99653b7d95213e6.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Toby Larone
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🤢" title="🤢" src="https://twemoji.maxcdn.com/2/72x72/1f922.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678754057183297556" id="message-678754057183297556">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> Probably Java, just through sheer weight of having used it the most.In the same way just building REST apis is probably somewhere near the top too.
+For improvement, I&#39;m currently working on a large monorepo, and that&#39;s been annoying me, so I&#39;ve been trying to come up with strategies to make that easier to work with. Whatever will help me improve that, I want to be more knowledgable in, lol</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🤢" title="🤢" src="https://twemoji.maxcdn.com/2/72x72/1f922.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678754435450667009" id="message-678754435450667009">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering botus&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  How do you handle working with people who annoy you?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/412540774694256640/b32cb9384302e745d75faee503c55431.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by botus
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🤢" title="🤢" src="https://twemoji.maxcdn.com/2/72x72/1f922.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678754435601793040" id="message-678754435601793040">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> I think this is just a case of keeping it civil and on work related matters. Utilizing your co workers or manager is also useful here. Recognize that probably not everyone has trouble working with this person, so discuss it with your manager. &quot;Hey, I just can&#39;t seem to get on the same page as X. Any thoughts on how I could change how I work with them?&quot;</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🤢" title="🤢" src="https://twemoji.maxcdn.com/2/72x72/1f922.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678754528446644241" id="message-678754528446644241">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> (Also, cheap shot about, hey, I work with the TPH staff regularly)</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="youcantstaryourownmessages" title="youcantstaryourownmessages" src="https://cdn.discordapp.com/emojis/618909921400061972.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🤢" title="🤢" src="https://twemoji.maxcdn.com/2/72x72/1f922.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678754796727173180" id="message-678754796727173180">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering Ryno&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  If you have to give one piece of advice to younger developers (Students, new grads, etc) what would it be?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/129678295057956864/454014f095cbc2c1d53428849cc84439.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Ryno
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🤢" title="🤢" src="https://twemoji.maxcdn.com/2/72x72/1f922.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678754797138083860" id="message-678754797138083860">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> Keep the always learning mindset. Be willing to admit when you don&#39;t know something, and then willing to learn about it.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🤢" title="🤢" src="https://twemoji.maxcdn.com/2/72x72/1f922.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678755439055208470" id="message-678755439055208470">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering laval&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  if you come across work done by a colleague, or even old work that&#39;s &quot;the standard&quot; at your company that you think is not the right way to do it, do you go along with it or do you push to get it changed? (and what if there are people that you know would push back out of pride?)</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/539547506971770881/11cd3ea87428527a1cc5092e289b9410.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by laval
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🤢" title="🤢" src="https://twemoji.maxcdn.com/2/72x72/1f922.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678755439923560474" id="message-678755439923560474">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> Whether I push to get it change or not, depends on what value we&#39;d get from changing it. If it&#39;s working code, the value is usually pretty close to nil. A good way to drive this kind of change, is when it makes future tasks easier. For example, we need to add feature X, well fixing this tech debt over here will allow us to do that faster, so let&#39;s put that in the plan for feature X. If people want to push back out of price, I&#39;m happy to let them keep ownership of that code (I&#39;m always happy to delegate, less work for me), along with that ownership comes the responsibility of modifying that code for new features/bugs, and being able to justify why they think it&#39;ll take 4 weeks to do something when there&#39;s an alternative plan that&#39;ll take 2.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🤢" title="🤢" src="https://twemoji.maxcdn.com/2/72x72/1f922.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678755549432643606" id="message-678755549432643606">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">Lana is answering Elliott&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What&#39;s your pfp?!</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/335628039302021121/a_30232e21b6efa0e86b0b107b56f0af71.gif" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Elliott
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">13</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="thistbh" title="thistbh" src="https://cdn.discordapp.com/emojis/631691906551775243.png" />
+                            <span class="chatlog__reaction-count">7</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🤢" title="🤢" src="https://twemoji.maxcdn.com/2/72x72/1f922.png" />
+                            <span class="chatlog__reaction-count">4</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="678755549969383483" id="message-678755549969383483">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>Lana:</strong> It&#39;s whatever you want it to be</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="😂" title="😂" src="https://twemoji.maxcdn.com/2/72x72/1f602.png" />
+                            <span class="chatlog__reaction-count">46</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="HR_PepeSheriff" title="HR_PepeSheriff" src="https://cdn.discordapp.com/emojis/645117585687576606.gif" />
+                            <span class="chatlog__reaction-count">12</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="yungboi" title="yungboi" src="https://cdn.discordapp.com/emojis/581530299612266518.png" />
+                            <span class="chatlog__reaction-count">10</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="lol" title="lol" src="https://cdn.discordapp.com/emojis/593426451961741315.png" />
+                            <span class="chatlog__reaction-count">16</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="KEKW" title="KEKW" src="https://cdn.discordapp.com/emojis/628249422253391902.png" />
+                            <span class="chatlog__reaction-count">30</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="HR_BruhSpaz" title="HR_BruhSpaz" src="https://cdn.discordapp.com/emojis/658731165754064898.gif" />
+                            <span class="chatlog__reaction-count">4</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="🤢" title="🤢" src="https://twemoji.maxcdn.com/2/72x72/1f922.png" />
+                            <span class="chatlog__reaction-count">3</span>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div>
+</div>
+
+<div class="postamble">
+    <div class="postamble__entry">Exported 61 message(s)</div>
+</div>
+
+</body>
+</html>

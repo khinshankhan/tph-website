@@ -1,0 +1,2114 @@
+{
+  "guild": {
+    "id": "244230771232079873",
+    "name": "The Programmer\u0027s Hangout",
+    "iconUrl": "https://cdn.discordapp.com/icons/244230771232079873/a_34da0ee46c9ed9799a636a976c896361.png"
+  },
+  "channel": {
+    "id": "711293717666857013",
+    "type": "GuildTextChat",
+    "name": "toby-larone",
+    "topic": null
+  },
+  "dateRange": {
+    "after": null,
+    "before": null
+  },
+  "messages": [
+    {
+      "id": "711294420712161283",
+      "type": "Default",
+      "timestamp": "2020-05-16T20:10:05.109+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Toby Larone is answering aeonian\u0027s Question:",
+          "url": null,
+          "timestamp": null,
+          "description": "**Question:**  what is your favorite Calvin and Hobbes comic",
+          "footer": {
+            "text": "Asked by aeonian",
+            "iconUrl": "https://cdn.discordapp.com/avatars/384380159387500544/aec71eae94f7f82478ace586647268d0.png"
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2B50",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2b50.png"
+          },
+          "count": 8
+        },
+        {
+          "emoji": {
+            "id": "426574661149523989",
+            "name": "HobThink",
+            "isAnimated": false,
+            "imageUrl": "https://cdn.discordapp.com/emojis/426574661149523989.png"
+          },
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": "711294421316010085",
+      "type": "Default",
+      "timestamp": "2020-05-16T20:10:05.253+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** The last one! 31st December 1995 \u003Chttps://www.gocomics.com/calvinandhobbes/1995/12/31\u003E",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": "710270502362677248",
+            "name": "hobbesheart",
+            "isAnimated": false,
+            "imageUrl": "https://cdn.discordapp.com/emojis/710270502362677248.png"
+          },
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "711296803815030824",
+      "type": "Default",
+      "timestamp": "2020-05-16T20:19:33.285+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Toby Larone is answering arkencl\u0027s Question:",
+          "url": null,
+          "timestamp": null,
+          "description": "**Question:**   As an QA and Developer, what are your opinions on BDD versus TDD? Which one do you prefer and why?",
+          "footer": {
+            "text": "Asked by arkencl",
+            "iconUrl": "https://cdn.discordapp.com/avatars/412540774694256640/d5db13406883dc3ad6503bfdb2b05bf3.png"
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2B50",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2b50.png"
+          },
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "711296804901355570",
+      "type": "Default",
+      "timestamp": "2020-05-16T20:19:33.544+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** I think both are great at getting you to think about what you\u0027re developing before you write some code. Planning is key for both, but I don\u0027t think I have a personal preference. Perhaps I\u0027d say BDD would work best when introduced in projects/companies where you currently have a lack of communication between devs, QA\u0027s and managers etc. I\u0027ve worked with quite a few clients that have a large disconnect between those groups and it really hurts the quality of the product, and the development progress.",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": "471117492614332426",
+            "name": "h2ocasper",
+            "isAnimated": true,
+            "imageUrl": "https://cdn.discordapp.com/emojis/471117492614332426.gif"
+          },
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "711297592264491008",
+      "type": "Default",
+      "timestamp": "2020-05-16T20:22:41.266+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Toby Larone is answering arkencl\u0027s Question:",
+          "url": null,
+          "timestamp": null,
+          "description": "**Question:**   You mentioned writing and world building as your hobby. Can you elobarate on what exactly you are working on in your free time?",
+          "footer": {
+            "text": "Asked by arkencl",
+            "iconUrl": "https://cdn.discordapp.com/avatars/412540774694256640/d5db13406883dc3ad6503bfdb2b05bf3.png"
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2B50",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2b50.png"
+          },
+          "count": 7
+        }
+      ]
+    },
+    {
+      "id": "711297592918540398",
+      "type": "Default",
+      "timestamp": "2020-05-16T20:22:41.422+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** I\u0027d thrown out story ideas to a friend for a long time and he suggested I build something more coherent with it. So I decided to start at the year 2000 and write a history of humankind becoming an interstellar species. It\u0027s interesting to think about how humanity may spread across the stars, break apart and come back together. And I love the science. It lead me to learn about experimental fuels and rockets that are currently being theorised and tested.",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83D\uDE80",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/1f680.png"
+          },
+          "count": 9
+        },
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83C\uDF20",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/1f320.png"
+          },
+          "count": 9
+        },
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83D\uDC7D",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/1f47d.png"
+          },
+          "count": 9
+        },
+        {
+          "emoji": {
+            "id": "581556529304436862",
+            "name": "pepeOK",
+            "isAnimated": false,
+            "imageUrl": "https://cdn.discordapp.com/emojis/581556529304436862.png"
+          },
+          "count": 6
+        },
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83D\uDC2F",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/1f42f.png"
+          },
+          "count": 4
+        }
+      ]
+    },
+    {
+      "id": "711298862006140969",
+      "type": "Default",
+      "timestamp": "2020-05-16T20:27:43.996+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Toby Larone is answering Lgneous\u0027s Question:",
+          "url": null,
+          "timestamp": null,
+          "description": "**Question:**  What\u0027s the biggest mistake you\u0027ve made during your career? What did you learn from it?",
+          "footer": {
+            "text": "Asked by Lgneous",
+            "iconUrl": "https://cdn.discordapp.com/avatars/154552940680445952/a_fa827cd746e2b29f90f42e393d453c32.gif"
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2B50",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2b50.png"
+          },
+          "count": 9
+        }
+      ]
+    },
+    {
+      "id": "711298862580629534",
+      "type": "Default",
+      "timestamp": "2020-05-16T20:27:44.133+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** Definitely when ownership of maintaining a server was handed over to me. The first thing I did was write a backup script. A few months later our VPS provider had a major fuck up and they deleted thousands of customers VPS\u0027s. They had no backups. I checked ours and the last successful one was like 20 days old. It took us a few days to bring everything back online after switching VPS provider, and we lost about 20 days of work. Lesson learned the hard way, backups are worthless if you don\u0027t test and validate them.",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83D\uDCBE",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/1f4be.png"
+          },
+          "count": 9
+        }
+      ]
+    },
+    {
+      "id": "711300186479263755",
+      "type": "Default",
+      "timestamp": "2020-05-16T20:32:59.775+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Toby Larone is answering tomasff\u0027s Question:",
+          "url": null,
+          "timestamp": null,
+          "description": "**Question:**  What\u0027s the most interesting PoC you have worked on (if you can tell us :P)",
+          "footer": {
+            "text": "Asked by tomasff",
+            "iconUrl": "https://cdn.discordapp.com/avatars/385840144273506307/9d1a6e2fe16a9ba52e7df2788aa2ffe3.png"
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2B50",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2b50.png"
+          },
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": "711300187687223306",
+      "type": "Default",
+      "timestamp": "2020-05-16T20:33:00.063+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** My boss was consulting and someone at the company made an offhand comment about one of their new systems they were looking to develop and automate. I don\u0027t think I can go into specifics of what it was for but my boss asked me to build a PoC that would take a video feed and do some object detection and work out which way objects were facing, and display warnings if things like hands were in the way. It was pretty fun learning a little about ML, training the model and running it. I would like to do more with that and luckily my boss is really into it, so hopefully more projects like that will come by \uD83D\uDE04",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83E\uDD16",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/1f916.png"
+          },
+          "count": 4
+        }
+      ]
+    },
+    {
+      "id": "711300804316889091",
+      "type": "Default",
+      "timestamp": "2020-05-16T20:35:27.079+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Toby Larone is answering Exouxas\u0027s Question:",
+          "url": null,
+          "timestamp": null,
+          "description": "**Question:**  What is your favorite personal project?",
+          "footer": {
+            "text": "Asked by Exouxas",
+            "iconUrl": "https://cdn.discordapp.com/avatars/208065828803969025/a_55d974b32847f577aa12756c4fcd977e.gif"
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2B50",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2b50.png"
+          },
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": "711300805541494845",
+      "type": "Default",
+      "timestamp": "2020-05-16T20:35:27.371+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** Probably my friends music app that I\u0027m helping out with. It\u0027s a way for DJs to easily share and collaborate on music and samples. It\u0027s something totally unrelated to anything else I\u0027ve done so it\u0027s pretty interesting for me to work on.",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83C\uDFB5",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/1f3b5.png"
+          },
+          "count": 8
+        },
+        {
+          "emoji": {
+            "id": "648429139744784404",
+            "name": "pepejam",
+            "isAnimated": false,
+            "imageUrl": "https://cdn.discordapp.com/emojis/648429139744784404.png"
+          },
+          "count": 4
+        },
+        {
+          "emoji": {
+            "id": "690283050122477915",
+            "name": "pepecoronajam",
+            "isAnimated": true,
+            "imageUrl": "https://cdn.discordapp.com/emojis/690283050122477915.gif"
+          },
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "711302046938038293",
+      "type": "Default",
+      "timestamp": "2020-05-16T20:40:23.343+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Toby Larone is answering Nezia\u0027s Question:",
+          "url": null,
+          "timestamp": null,
+          "description": "**Question:**  What are your favorite frameworks / librairies?",
+          "footer": {
+            "text": "Asked by Nezia",
+            "iconUrl": "https://cdn.discordapp.com/avatars/174198621653172224/28e40e62d33aa32091c0a20691fece91.png"
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2B50",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2b50.png"
+          },
+          "count": 7
+        }
+      ]
+    },
+    {
+      "id": "711302047554601010",
+      "type": "Default",
+      "timestamp": "2020-05-16T20:40:23.49+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** If I\u0027m doing anything that requires database access it\u0027s gotta be jOOQ! Aside from an awesome library, the author has a great blog on all things databases. \u003Chttps://www.jooq.org/\u003E I\u0027m also looking forward to see what becomes of Microsoft\u0027s Playwright \u003Chttps://github.com/microsoft/playwright\u003E. It\u0027s an alternative to puppeteer, and I write a lot of browser UI tests for work so this looks very interesting. I could go on, there are a lot of cool libraries and frameworks out there!",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": "581560497342513162",
+            "name": "hypers",
+            "isAnimated": false,
+            "imageUrl": "https://cdn.discordapp.com/emojis/581560497342513162.png"
+          },
+          "count": 2
+        },
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83C\uDFAD",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/1f3ad.png"
+          },
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "711302702100906024",
+      "type": "Default",
+      "timestamp": "2020-05-16T20:42:59.546+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Toby Larone is answering Exouxas\u0027s Question:",
+          "url": null,
+          "timestamp": null,
+          "description": "**Question:**  If you want to relax to the max one day, what do you do?",
+          "footer": {
+            "text": "Asked by Exouxas",
+            "iconUrl": "https://cdn.discordapp.com/avatars/208065828803969025/a_55d974b32847f577aa12756c4fcd977e.gif"
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2B50",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2b50.png"
+          },
+          "count": 4
+        }
+      ]
+    },
+    {
+      "id": "711302702985904218",
+      "type": "Default",
+      "timestamp": "2020-05-16T20:42:59.757+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** Watching movies or gaming. Lately I\u0027ve been playing Sea of Thieves with a few friends and that has been very fun!",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83C\uDFF4\u200D\u2620\uFE0F",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/1f3f4-200d-2620.png"
+          },
+          "count": 9
+        }
+      ]
+    },
+    {
+      "id": "711304690121441281",
+      "type": "Default",
+      "timestamp": "2020-05-16T20:50:53.527+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Toby Larone is answering veksen\u0027s Question:",
+          "url": null,
+          "timestamp": null,
+          "description": "**Question:**  What\u0027s your view on the old market-proven solutions like Selenium vs the new kids on the block?",
+          "footer": {
+            "text": "Asked by veksen",
+            "iconUrl": "https://cdn.discordapp.com/avatars/233040446291574784/86c59033aec12bac4ae81e15c974f44e.png"
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2B50",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2b50.png"
+          },
+          "count": 6
+        }
+      ]
+    },
+    {
+      "id": "711304690729746475",
+      "type": "Default",
+      "timestamp": "2020-05-16T20:50:53.672+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** At work we almost exclusively use Selenium, but I mentioned in a previous answer I\u0027m looking forward to using Microsoft\u0027s Playwright. Selenium definitely has its problems but it also comes with the most resources, and most people in QA are familiar with it so we will most likely stick with that as our daily driver (pun intended) for a while yet.",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": "594454631405584387",
+            "name": "SmirkGuns",
+            "isAnimated": false,
+            "imageUrl": "https://cdn.discordapp.com/emojis/594454631405584387.png"
+          },
+          "count": 7
+        }
+      ]
+    },
+    {
+      "id": "711306246690570321",
+      "type": "Default",
+      "timestamp": "2020-05-16T20:57:04.642+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Toby Larone is answering Sky\u0027s Question:",
+          "url": null,
+          "timestamp": null,
+          "description": "**Question:**  What\u0027s your favorite language? and depending on which ones you think is worth mentioning, name a few things you love about it, and a few things you hate about it",
+          "footer": {
+            "text": "Asked by Sky",
+            "iconUrl": "https://cdn.discordapp.com/avatars/469466888657829889/3edc161195f6c04b5a1095e3ee50a646.png"
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2B50",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2b50.png"
+          },
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": "711306246984171591",
+      "type": "Default",
+      "timestamp": "2020-05-16T20:57:04.712+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** Well I\u0027m most familiar with Java so it\u0027s certainly up there. I like the new pace of updates and pretty much all of the upcoming projects to improve the language look cool as hell. Valhalla, panama, and loom \uD83D\uDC4C I dislike the whole fully backwards compatibility thing, particularly when the language maintainers are rather open about the features they feel are implemented badly, or should just be completely reimplemented. I personally feel like the break from java 8 to java 9 would\u0027ve been the only point to scrap the bad but that didn\u0027t happen, and most likely will never. So we work with what we\u0027ve got. Rust looks like a pretty interesting language. I\u0027ve dabbled with it a tiny bit so I wouldn\u0027t want to form a strong opinion about it yet, but I\u0027d definitely like to explore it more.",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83D\uDCDA",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/1f4da.png"
+          },
+          "count": 10
+        },
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83E\uDD80",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/1f980.png"
+          },
+          "count": 7
+        },
+        {
+          "emoji": {
+            "id": "707970461266345996",
+            "name": "duke",
+            "isAnimated": false,
+            "imageUrl": "https://cdn.discordapp.com/emojis/707970461266345996.png"
+          },
+          "count": 6
+        },
+        {
+          "emoji": {
+            "id": "581379880957116416",
+            "name": "rust",
+            "isAnimated": false,
+            "imageUrl": "https://cdn.discordapp.com/emojis/581379880957116416.png"
+          },
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "711307781000658964",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:03:10.45+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Toby Larone is answering Gh0sticF0rm\u0027s Question:",
+          "url": null,
+          "timestamp": null,
+          "description": "**Question:**  In my opinion, WFH is awesome but yet distracting. How do you proceed with your day ? Do you do a personal \u201Cto-do list\u201D with all your tasks for the day listed or ? Thanks in advance for your answer and you are awesome, Toby ! :BraveryHearts: :sharknado:",
+          "footer": {
+            "text": "Asked by Gh0sticF0rm",
+            "iconUrl": "https://cdn.discordapp.com/avatars/325879975058210818/80b4e47adfdc7ea64dbcf0d95bff04e8.png"
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2B50",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2b50.png"
+          },
+          "count": 6
+        }
+      ]
+    },
+    {
+      "id": "711307782451757146",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:03:10.796+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** I found my first month of WFH to be awful, but I eventually figured out what worked for me. I do write a small to-do list and check them off as I go. Keep tasks small so at the end of the day it feels like you\u0027ve done a lot more. I also posted some advice in the poll discussion here a while back \u003Chttps://discordapp.com/channels/244230771232079873/424158229107572737/696070473808609360\u003E The one thing I would add to that, particularly for people new to WFH due to covid-19 is this: What we are experiencing right now in a lot of the world is not what WFH typically is. pre2020 We could go out in the morning, for lunch, in the evening, and at the weekend. Meet up with friends and/or colleagues, play sports, go to the cinema, go to a bar. WFH isn\u0027t about being shut indoors 24/7 and being limited to Microsoft Teams/zoom/skype etc.",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": "559353643048894474",
+            "name": "BraveryHearts",
+            "isAnimated": true,
+            "imageUrl": "https://cdn.discordapp.com/emojis/559353643048894474.gif"
+          },
+          "count": 4
+        }
+      ]
+    },
+    {
+      "id": "711308335160361062",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:05:22.572+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Toby Larone is answering shan\u0027s Question:",
+          "url": null,
+          "timestamp": null,
+          "description": "**Question:**  What\u0027s your favorite dad joke :FingerGuns:",
+          "footer": {
+            "text": "Asked by shan",
+            "iconUrl": "https://cdn.discordapp.com/avatars/356260437567995914/347b4cf90b56fcdc223a4bec2afffec9.png"
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2B50",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2b50.png"
+          },
+          "count": 6
+        }
+      ]
+    },
+    {
+      "id": "711308336460595213",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:05:22.882+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** There are so many great dad jokes! I don\u0027t think I can nail it down beyond these two:\nWhere does the king keep his armies? || In his sleevies ||\nYou know what the hardest part about making skimmed milk is? || throwing the cows across the lake ||",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": "585667967933480974",
+            "name": "peepoKing",
+            "isAnimated": false,
+            "imageUrl": "https://cdn.discordapp.com/emojis/585667967933480974.png"
+          },
+          "count": 5
+        },
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83D\uDC04",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/1f404.png"
+          },
+          "count": 5
+        },
+        {
+          "emoji": {
+            "id": "650119808947585035",
+            "name": "chunky_milk",
+            "isAnimated": false,
+            "imageUrl": "https://cdn.discordapp.com/emojis/650119808947585035.png"
+          },
+          "count": 5
+        },
+        {
+          "emoji": {
+            "id": "628249422253391902",
+            "name": "KEKW",
+            "isAnimated": false,
+            "imageUrl": "https://cdn.discordapp.com/emojis/628249422253391902.png"
+          },
+          "count": 13
+        },
+        {
+          "emoji": {
+            "id": "582545502705287189",
+            "name": "dad",
+            "isAnimated": false,
+            "imageUrl": "https://cdn.discordapp.com/emojis/582545502705287189.png"
+          },
+          "count": 9
+        },
+        {
+          "emoji": {
+            "id": "704408144054321184",
+            "name": "thonkerguns",
+            "isAnimated": false,
+            "imageUrl": "https://cdn.discordapp.com/emojis/704408144054321184.png"
+          },
+          "count": 2
+        },
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83D\uDC2E",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/1f42e.png"
+          },
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "711311924255653968",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:19:38.279+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Toby Larone is answering arkencl\u0027s Question:",
+          "url": null,
+          "timestamp": null,
+          "description": "**Question:**  What does a daily triage process look like for you?",
+          "footer": {
+            "text": "Asked by arkencl",
+            "iconUrl": "https://cdn.discordapp.com/avatars/412540774694256640/d5db13406883dc3ad6503bfdb2b05bf3.png"
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2B50",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2b50.png"
+          },
+          "count": 4
+        }
+      ]
+    },
+    {
+      "id": "711311925169881109",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:19:38.497+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** For defects we find for clients, sometimes we\u0027ll give our 2cents on the priority of the defect when we send it but it\u0027s usually them that prioritise them. It depends on our contract with them. For our own products we have a weekly meeting with the product owner, QA, and devs. We go through all open defects. Prioritise and reprioritise anything that needs it (usually done by the PO) and we\u0027ll assign resources. These are often medium or low priority things. The exception is critical defects where access to the service is impaired/limited in some way, in which case it\u0027ll be assigned on to a developer immediately by QA. We have specific people these issues are handed off to depending on whether its backend or frontend.",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": "667038491745714217",
+            "name": "stonks",
+            "isAnimated": false,
+            "imageUrl": "https://cdn.discordapp.com/emojis/667038491745714217.png"
+          },
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": "711315069027352646",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:32:08.051+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Toby Larone is answering shan\u0027s Question:",
+          "url": null,
+          "timestamp": null,
+          "description": "**Question:**  A common testing problem is how many tests you should write vs how much they\u0027re worth. At what point do you feel it\u0027s okay to let go and stop writing tests because theyre not worth it (monetarily \u002B effort wise)?",
+          "footer": {
+            "text": "Asked by shan",
+            "iconUrl": "https://cdn.discordapp.com/avatars/356260437567995914/347b4cf90b56fcdc223a4bec2afffec9.png"
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2B50",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2b50.png"
+          },
+          "count": 4
+        }
+      ]
+    },
+    {
+      "id": "711315069543252079",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:32:08.174+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** Good question, it\u0027s a hard one honestly. You can get caught up in the \u0022what-ifs\u0022 of whether doing something is worth it or not. I\u0027ll always say testing as you develop is best effort-wise (regardless of which development methodology you follow to do it), but really you should try to define an acceptable limit in your requirements based on your usecase. We\u0027ve had some clients that base their testing quality in relation to the number of support tickets they get. If they hit above a certain threshold of defect complaints then they\u0027re not doing enough testing.",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83C\uDFAB",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/1f3ab.png"
+          },
+          "count": 4
+        },
+        {
+          "emoji": {
+            "id": "697911255155081347",
+            "name": "ThankYou",
+            "isAnimated": true,
+            "imageUrl": "https://cdn.discordapp.com/emojis/697911255155081347.gif"
+          },
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "711316169746940046",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:36:30.483+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Toby Larone is answering Gengis\u0027s Question:",
+          "url": null,
+          "timestamp": null,
+          "description": "**Question:**  Its my first year in uni and my goal is to become a web dev, i have been studying for a year now. My goal is to become a very good developer, so i can climb the ladder in my career. What are the best tip you could give someone during their studies? i am willing to put alot of time for things that will help me in the future.",
+          "footer": {
+            "text": "Asked by Gengis",
+            "iconUrl": "https://cdn.discordapp.com/avatars/642784530192662538/a27b38a46ed5c1042f60b4843a20de77.png"
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2B50",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2b50.png"
+          },
+          "count": 4
+        }
+      ]
+    },
+    {
+      "id": "711316170908893247",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:36:30.76+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** I think a lot of people don\u0027t take advantage of their professors. Listen to them, ask them questions, find out what their field of interest is. Absorb as much knowledge as you can. They will be far more willing to help you if you show them you can put the effort in, and you get to know them. They might even give you first pickings of research opportunities or jobs their friends are hiring for.",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83D\uDC68\u200D\uD83C\uDF93",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/1f468-200d-1f393.png"
+          },
+          "count": 4
+        },
+        {
+          "emoji": {
+            "id": "688332843750785026",
+            "name": "thumb2",
+            "isAnimated": false,
+            "imageUrl": "https://cdn.discordapp.com/emojis/688332843750785026.png"
+          },
+          "count": 4
+        }
+      ]
+    },
+    {
+      "id": "711318037114126397",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:43:55.698+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Toby Larone is answering Kokoden\u0027s Question:",
+          "url": null,
+          "timestamp": null,
+          "description": "**Question:**  If you have to plan a bigger project with a team or alone, how do you start?",
+          "footer": {
+            "text": "Asked by Kokoden",
+            "iconUrl": "https://cdn.discordapp.com/avatars/199340460638994432/1143e8bfea926cc739dbc3ca6747459b.png"
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2B50",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2b50.png"
+          },
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "711318037864775680",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:43:55.877+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** Planning is the way to go. Write down the functionality that you want. Make sure even the small details are defined. Write down the user journeys for each bit of functionality, describing the flow of how users will interact with the software. If it is going to be data driven, draw out your database structure. Be aware that you can always readjust if you see things might be going the wrong way. Just be careful that you don\u0027t fall into the trap of planning until the end of time. I don\u0027t think any software architecture/design is perfect. Changes are made all the time and that\u0027s ok.",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": "688332840076836879",
+            "name": "excitedd",
+            "isAnimated": false,
+            "imageUrl": "https://cdn.discordapp.com/emojis/688332840076836879.png"
+          },
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "711318451851100181",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:45:34.579+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Toby Larone is answering Kokoden\u0027s Question:",
+          "url": null,
+          "timestamp": null,
+          "description": "**Question:**  Favourite pizza toppings? :excitedd:",
+          "footer": {
+            "text": "Asked by Kokoden",
+            "iconUrl": "https://cdn.discordapp.com/avatars/199340460638994432/1143e8bfea926cc739dbc3ca6747459b.png"
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2B50",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2b50.png"
+          },
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "711318453016985652",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:45:34.857+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** BBQ sauce, bacon, chicken, onion, and mushroom \uD83D\uDC4C",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83C\uDF55",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/1f355.png"
+          },
+          "count": 4
+        },
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83C\uDF44",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/1f344.png"
+          },
+          "count": 4
+        },
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83E\uDD53",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/1f953.png"
+          },
+          "count": 5
+        },
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83D\uDC14",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/1f414.png"
+          },
+          "count": 3
+        },
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83E\uDDC5",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/1f9c5.png"
+          },
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "711318715630747708",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:46:37.469+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Toby Larone is answering Exouxas\u0027s Question:",
+          "url": null,
+          "timestamp": null,
+          "description": "**Question:**  What was your first programming language?",
+          "footer": {
+            "text": "Asked by Exouxas",
+            "iconUrl": "https://cdn.discordapp.com/avatars/208065828803969025/a_55d974b32847f577aa12756c4fcd977e.gif"
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2B50",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2b50.png"
+          },
+          "count": 4
+        }
+      ]
+    },
+    {
+      "id": "711318716087926887",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:46:37.578+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** I think I started with writing websites. So html, css, php (4 or 5 I think)",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": []
+    },
+    {
+      "id": "711319860507836426",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:51:10.429+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Toby Larone is answering \uD83D\uDC1F Mr. Trout\u0027s Question:",
+          "url": null,
+          "timestamp": null,
+          "description": "**Question:**  In your opinion, is a project better off with a comprehensive unit test suite with a few integration tests on top, or an extremely comprehensive (covering every code path) integration test suite?",
+          "footer": {
+            "text": "Asked by \uD83D\uDC1F Mr. Trout",
+            "iconUrl": "https://cdn.discordapp.com/avatars/369748885968781313/518333e85c454094a394b170a5746f98.png"
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2B50",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2b50.png"
+          },
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "711319860931461171",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:51:10.53+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** I think both are necessary, but if I have to choose between one or the other then I\u0027d probably go with the latter actually. Most of the defects we find are from components working with each other, rather than a single component. And I think that is because most devs will naturally test while they write code, even if they aren\u0027t explicitly writing unit tests.",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": []
+    },
+    {
+      "id": "711320222044258385",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:52:36.626+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Toby Larone is answering iWillBanU\u0027s Question:",
+          "url": null,
+          "timestamp": null,
+          "description": "**Question:**  What do you enjoy the most about this server?",
+          "footer": {
+            "text": "Asked by iWillBanU",
+            "iconUrl": "https://cdn.discordapp.com/avatars/474016258019557377/0e6f10b460a50ee8f848ebf9ad655739.png"
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2B50",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2b50.png"
+          },
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "711320222916673538",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:52:36.834+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** It\u0027s pretty great to see a) a bunch of people that don\u0027t know each other from all walks of life helping each other and b) those that need help eventually growing into people that can help others",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": "711000174641676318",
+            "name": "HobbesHug",
+            "isAnimated": false,
+            "imageUrl": "https://cdn.discordapp.com/emojis/711000174641676318.png"
+          },
+          "count": 7
+        }
+      ]
+    },
+    {
+      "id": "711320840133673050",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:55:03.99+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Toby Larone is answering Exouxas\u0027s Question:",
+          "url": null,
+          "timestamp": null,
+          "description": "**Question:**  Did you initially want to get into software development, or was there an alternative path you considered taking?",
+          "footer": {
+            "text": "Asked by Exouxas",
+            "iconUrl": "https://cdn.discordapp.com/avatars/208065828803969025/a_55d974b32847f577aa12756c4fcd977e.gif"
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2B50",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2b50.png"
+          },
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "711320840867938327",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:55:04.165+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** It\u0027s always been software development of some kind, though I have never had a specific area of software development in mind. That\u0027s probably why I like my current job so much, I get to work with a bunch of different projects in different fields.",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": []
+    },
+    {
+      "id": "711320993993588738",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:55:40.673+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Toby Larone is answering Sky\u0027s Question:",
+          "url": null,
+          "timestamp": null,
+          "description": "**Question:**  Do you find this Q\u0026A stressful? if yes, what would you think is the most stressful thing about it?",
+          "footer": {
+            "text": "Asked by Sky",
+            "iconUrl": "https://cdn.discordapp.com/avatars/469466888657829889/3edc161195f6c04b5a1095e3ee50a646.png"
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2B50",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2b50.png"
+          },
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "711320994941239396",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:55:40.899+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** https://tenor.com/view/cat-work-it-make-cat-typing-fast-swagger-gif-12072592",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": null,
+          "url": "https://tenor.com/view/cat-work-it-make-cat-typing-fast-swagger-gif-12072592",
+          "timestamp": null,
+          "description": null,
+          "thumbnail": {
+            "url": "https://media.tenor.co/images/1776ce5906b3de87f531f8d0403ef316/tenor.png",
+            "width": 270,
+            "height": 270
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": "628249422253391902",
+            "name": "KEKW",
+            "isAnimated": false,
+            "imageUrl": "https://cdn.discordapp.com/emojis/628249422253391902.png"
+          },
+          "count": 20
+        }
+      ]
+    },
+    {
+      "id": "711321069855834162",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:55:58.76+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** my paws are gonna ache tomorrow",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": "681236094162960441",
+            "name": "F_Pepe",
+            "isAnimated": false,
+            "imageUrl": "https://cdn.discordapp.com/emojis/681236094162960441.png"
+          },
+          "count": 4
+        },
+        {
+          "emoji": {
+            "id": "657311422878842918",
+            "name": "lol",
+            "isAnimated": false,
+            "imageUrl": "https://cdn.discordapp.com/emojis/657311422878842918.png"
+          },
+          "count": 7
+        }
+      ]
+    },
+    {
+      "id": "711321589588688936",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:58:02.674+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Toby Larone is answering Exouxas\u0027s Question:",
+          "url": null,
+          "timestamp": null,
+          "description": "**Question:**  Do you enjoy programming alone or as a team more?",
+          "footer": {
+            "text": "Asked by Exouxas",
+            "iconUrl": "https://cdn.discordapp.com/avatars/208065828803969025/a_55d974b32847f577aa12756c4fcd977e.gif"
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2B50",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2b50.png"
+          },
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "711321590335537202",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:58:02.852+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** I don\u0027t mind so much. But it does depends on the team. My current colleagues are great, but I\u0027ve had my fair share of bad eggs",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83E\uDD5A",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/1f95a.png"
+          },
+          "count": 5
+        },
+        {
+          "emoji": {
+            "id": "613131582773133347",
+            "name": "sup",
+            "isAnimated": true,
+            "imageUrl": "https://cdn.discordapp.com/emojis/613131582773133347.gif"
+          },
+          "count": 4
+        },
+        {
+          "emoji": {
+            "id": "674690126546206741",
+            "name": "egggiver",
+            "isAnimated": true,
+            "imageUrl": "https://cdn.discordapp.com/emojis/674690126546206741.gif"
+          },
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "711322053763924050",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:59:53.342+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Toby Larone is answering arkencl\u0027s Question:",
+          "url": null,
+          "timestamp": null,
+          "description": "**Question:**  In these times we are forced to do a lot more wfh, what are some cool things your company is doing to keep up spirits?",
+          "footer": {
+            "text": "Asked by arkencl",
+            "iconUrl": "https://cdn.discordapp.com/avatars/412540774694256640/d5db13406883dc3ad6503bfdb2b05bf3.png"
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2B50",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2b50.png"
+          },
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "711322054833471609",
+      "type": "Default",
+      "timestamp": "2020-05-16T21:59:53.597+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** Even though I\u0027ve been wfh for a long time, we\u0027ve never done video calls before (Mostly because I\u0027d end up visiting the office each month anyway). But now we\u0027re doing video calls twice a week and it does make a big difference. I wouldn\u0027t say anyone is particularly down though fortunately.",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": []
+    },
+    {
+      "id": "711322382455013376",
+      "type": "Default",
+      "timestamp": "2020-05-16T22:01:11.708+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Toby Larone is answering Isaac\u0027s Question:",
+          "url": null,
+          "timestamp": null,
+          "description": "**Question:**  What is your editor of choice?",
+          "footer": {
+            "text": "Asked by Isaac",
+            "iconUrl": "https://cdn.discordapp.com/avatars/263828140164513792/23a4542f84d732844659f076d4f6d34f.png"
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2B50",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2b50.png"
+          },
+          "count": 4
+        }
+      ]
+    },
+    {
+      "id": "711322383126102066",
+      "type": "Default",
+      "timestamp": "2020-05-16T22:01:11.868+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** I use vscode for pretty much everything now, but if I had to use something else I wouldn\u0027t really mind. I\u0027m sure I\u0027d get used to it.",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": "680140381115252762",
+            "name": "emacs",
+            "isAnimated": false,
+            "imageUrl": "https://cdn.discordapp.com/emojis/680140381115252762.png"
+          },
+          "count": 2
+        },
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2753",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2753.png"
+          },
+          "count": 1
+        },
+        {
+          "emoji": {
+            "id": "625346411738824714",
+            "name": "POGGIES",
+            "isAnimated": false,
+            "imageUrl": "https://cdn.discordapp.com/emojis/625346411738824714.png"
+          },
+          "count": 4
+        },
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83C\uDD9A",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/1f19a.png"
+          },
+          "count": 7
+        },
+        {
+          "emoji": {
+            "id": "646360941587464232",
+            "name": "visualstudio",
+            "isAnimated": false,
+            "imageUrl": "https://cdn.discordapp.com/emojis/646360941587464232.png"
+          },
+          "count": 8
+        }
+      ]
+    },
+    {
+      "id": "711323452832743425",
+      "type": "Default",
+      "timestamp": "2020-05-16T22:05:26.906+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Toby Larone is answering Exouxas\u0027s Question:",
+          "url": null,
+          "timestamp": null,
+          "description": "**Question:**  If you could work for any company other than your current employer, where would you want to work? Or what field?",
+          "footer": {
+            "text": "Asked by Exouxas",
+            "iconUrl": "https://cdn.discordapp.com/avatars/208065828803969025/a_55d974b32847f577aa12756c4fcd977e.gif"
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\u2B50",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/2b50.png"
+          },
+          "count": 4
+        }
+      ]
+    },
+    {
+      "id": "711323453806084187",
+      "type": "Default",
+      "timestamp": "2020-05-16T22:05:27.138+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**Toby Larone:** Working on anything related to space/space travel would be pretty damn cool \uD83D\uDE80 Or maybe biotech",
+      "author": {
+        "id": "429275180309807134",
+        "name": "Nano",
+        "discriminator": "8992",
+        "isBot": true,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83D\uDE80",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/1f680.png"
+          },
+          "count": 9
+        }
+      ]
+    },
+    {
+      "id": "711323864457543720",
+      "type": "Default",
+      "timestamp": "2020-05-16T22:07:05.045+01:00",
+      "timestampEdited": null,
+      "isPinned": false,
+      "content": "**That concludes today\u0027s Q\u0026A! Huge thanks to toby for answering these questions and a big thanks to everyone else for asking these great questions.**",
+      "author": {
+        "id": "345541952500006912",
+        "name": "moe",
+        "discriminator": "9999",
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/345541952500006912/6f72c5249bf1edfc6eca3e10d07f7ec5.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": "441410567530348545",
+            "name": "sharknado",
+            "isAnimated": true,
+            "imageUrl": "https://cdn.discordapp.com/emojis/441410567530348545.gif"
+          },
+          "count": 9
+        },
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83D\uDC2F",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/1f42f.png"
+          },
+          "count": 5
+        },
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83E\uDD81",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/72x72/1f981.png"
+          },
+          "count": 4
+        },
+        {
+          "emoji": {
+            "id": "581379931775303680",
+            "name": "ruby",
+            "isAnimated": false,
+            "imageUrl": "https://cdn.discordapp.com/emojis/581379931775303680.png"
+          },
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "messageCount": 54
+}

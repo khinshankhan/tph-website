@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>The Programmer&#39;s Hangout - Haekuh Q&A - May 1st, 2020</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <style>
+        /* General */
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/6c6374bad0b0b6d204d8d6dc4a18d820.woff);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/e8acd7d9bf6207f99350ca9f9e23b168.woff);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/3bdef1251a424500c1b3a78dea9b7e57.woff);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/be0060dafb7a0e31d2a1ca17c0708636.woff);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discordapp.com/assets/8e12fb4f14d9c4592eb8ec9f22337b04.woff);
+    font-weight: 700;
+}
+
+body {
+    font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    object-fit: contain;
+}
+
+.markdown {
+    white-space: pre-wrap;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+}
+
+.spoiler {
+    border-radius: 3px;
+}
+
+.quote {
+    margin: 0.5em 0;
+    padding-left: 0.6em;
+    border-left: 4px solid;
+    border-radius: 3px;
+}
+
+.pre {
+    font-family: "Consolas", "Courier New", Courier, monospace;
+}
+
+.pre--multiline {
+    margin-top: 0.25em;
+    padding: 0.5em;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+.pre--inline {
+    padding: 2px;
+    border-radius: 3px;
+    font-size: 0.85em;
+}
+
+.mention {
+    border-radius: 3px;
+    padding: 0 2px;
+    color: #7289da;
+    background: rgba(114, 137, 218, .1);
+    font-weight: 500;
+}
+
+.emoji {
+    width: 1.25em;
+    height: 1.25em;
+    margin: 0 0.06em;
+    vertical-align: -0.4em;
+}
+
+.emoji--small {
+    width: 1em;
+    height: 1em;
+}
+
+.emoji--large {
+    width: 2.8em;
+    height: 2.8em;
+}
+
+/* Preamble */
+
+.preamble {
+    display: grid;
+    margin: 0 0.3em 0.6em 0.3em;
+    max-width: 100%;
+    grid-template-columns: auto 1fr;
+}
+
+.preamble__guild-icon-container {
+    grid-column: 1;
+}
+
+.preamble__guild-icon {
+    max-width: 88px;
+    max-height: 88px;
+}
+
+.preamble__entries-container {
+    grid-column: 2;
+    margin-left: 0.6em;
+}
+
+.preamble__entry {
+    font-size: 1.4em;
+}
+
+.preamble__entry--small {
+    font-size: 1em;
+}
+
+/* Chatlog */
+
+.chatlog {
+    max-width: 100%;
+}
+
+.chatlog__message-group {
+    display: grid;
+    margin: 0 0.6em;
+    padding: 0.9em 0;
+    border-top: 1px solid;
+    grid-template-columns: auto 1fr;
+}
+
+.chatlog__author-avatar-container {
+    grid-column: 1;
+    width: 40px;
+    height: 40px;
+}
+
+.chatlog__author-avatar {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.chatlog__messages {
+    grid-column: 2;
+    margin-left: 1.2em;
+    min-width: 50%;
+}
+
+.chatlog__author-name {
+    font-weight: 500;
+}
+
+.chatlog__timestamp {
+    margin-left: 0.3em;
+    font-size: 0.75em;
+}
+
+.chatlog__message {
+    padding: 0.1em 0.3em;
+    margin: 0 -0.3em;
+    background-color: transparent;
+    transition: background-color 1s ease;
+}
+
+.chatlog__content {
+    font-size: 0.95em;
+    word-wrap: break-word;
+}
+
+.chatlog__edited-timestamp {
+    margin-left: 0.15em;
+    font-size: 0.8em;
+}
+
+.chatlog__attachment-thumbnail {
+    margin-top: 0.3em;
+    max-width: 50%;
+    max-height: 500px;
+    border-radius: 3px;
+}
+
+.chatlog__embed {
+    display: flex;
+    margin-top: 0.3em;
+    max-width: 520px;
+}
+
+.chatlog__embed-color-pill {
+    flex-shrink: 0;
+    width: 0.25em;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.chatlog__embed-content-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em 0.6em;
+    border: 1px solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.chatlog__embed-content {
+    display: flex;
+    width: 100%;
+}
+
+.chatlog__embed-text {
+    flex: 1;
+}
+
+.chatlog__embed-author {
+    display: flex;
+    margin-bottom: 0.3em;
+    align-items: center;
+}
+
+.chatlog__embed-author-icon {
+    margin-right: 0.5em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.chatlog__embed-author-name {
+    font-size: 0.875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-title {
+    margin-bottom: 0.2em;
+    font-size: 0.875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-description {
+    font-weight: 500;
+    font-size: 0.85em;
+}
+
+.chatlog__embed-fields {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chatlog__embed-field {
+    flex: 0;
+    min-width: 100%;
+    max-width: 506px;
+    padding-top: 0.6em;
+    font-size: 0.875em;
+}
+
+.chatlog__embed-field--inline {
+    flex: 1;
+    flex-basis: auto;
+    min-width: 150px;
+}
+
+.chatlog__embed-field-name {
+    margin-bottom: 0.2em;
+    font-weight: 600;
+}
+
+.chatlog__embed-field-value {
+    font-weight: 500;
+}
+
+.chatlog__embed-thumbnail {
+    flex: 0;
+    margin-left: 1.2em;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-image-container {
+    margin-top: 0.6em;
+}
+
+.chatlog__embed-image {
+    max-width: 500px;
+    max-height: 400px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-footer {
+    margin-top: 0.6em;
+}
+
+.chatlog__embed-footer-icon {
+    margin-right: 0.2em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.chatlog__embed-footer-text {
+    font-size: 0.75em;
+    font-weight: 500;
+}
+
+.chatlog__reactions {
+    display: flex;
+}
+
+.chatlog__reaction {
+    display: flex;
+    align-items: center;
+    margin: 0.35em 0.1em 0.1em 0.1em;
+    padding: 0.2em 0.35em;
+    border-radius: 3px;
+}
+
+.chatlog__reaction-count {
+    min-width: 9px;
+    margin-left: 0.35em;
+    font-size: 0.875em;
+}
+
+.chatlog__bot-tag {
+    position: relative;
+    top: -.2em;
+    margin-left: 0.3em;
+    padding: 0.05em 0.3em;
+    border-radius: 3px;
+    vertical-align: middle;
+    line-height: 1.3;
+    background: #7289da;
+    color: #ffffff;
+    font-size: 0.625em;
+    font-weight: 500;
+}
+
+/* Postamble */
+
+.postamble {
+    margin: 1.4em 0.3em 0.6em 0.3em;
+    padding: 1em;
+    border-top: 1px solid;
+}
+    </style>
+    <style>
+        /* General */
+
+body {
+    background-color: #36393e;
+    color: #dcddde;
+}
+
+a {
+    color: #0096cf;
+}
+
+.spoiler {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.quote {
+    border-color: #4f545c;
+}
+
+.pre {
+    background-color: #2f3136 !important;
+}
+
+.pre--multiline {
+    border-color: #282b30 !important;
+    color: #b9bbbe !important;
+}
+
+/* === Preamble === */
+
+.preamble__entry {
+    color: #ffffff;
+}
+
+/* Chatlog */
+
+.chatlog__message-group {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.chatlog__author-name {
+    color: #ffffff;
+}
+
+.chatlog__timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__message--highlighted {
+    background-color: rgba(114, 137, 218, 0.2) !important;
+}
+
+.chatlog__message--pinned {
+    background-color: rgba(249, 168, 37, 0.05);
+}
+
+.chatlog__edited-timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__embed-color-pill--default {
+    background-color: rgba(79, 84, 92, 1);
+}
+
+.chatlog__embed-content-container {
+    background-color: rgba(46, 48, 54, 0.3);
+    border-color: rgba(46, 48, 54, 0.6);
+}
+
+.chatlog__embed-author-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-author-name-link {
+    color: #ffffff;
+}
+
+.chatlog__embed-title {
+    color: #ffffff;
+}
+
+.chatlog__embed-description {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-field-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-field-value {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-footer {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__reaction {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.chatlog__reaction-count {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Postamble */
+
+.postamble {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.postamble__entry {
+    color: #ffffff;
+}
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/solarized-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.pre--multiline').forEach(block => hljs.highlightBlock(block));
+        });
+    </script>
+
+    <script>
+        function scrollToMessage(event, id) {
+            var element = document.getElementById('message-' + id);
+
+            if (element) {
+                event.preventDefault();
+
+                element.classList.add('chatlog__message--highlighted');
+
+                window.scrollTo({
+                    top: element.getBoundingClientRect().top - document.body.getBoundingClientRect().top - (window.innerHeight / 2),
+                    behavior: 'smooth'
+                });
+
+                window.setTimeout(function() {
+                    element.classList.remove('chatlog__message--highlighted');
+                }, 2000);
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="preamble">
+    <div class="preamble__guild-icon-container">
+        <img class="preamble__guild-icon" src="https://cdn.discordapp.com/icons/244230771232079873/a_34da0ee46c9ed9799a636a976c896361.png" alt="Guild icon" />
+    </div>
+    <div class="preamble__entries-container">
+        <div class="preamble__entry">The Programmer&#39;s Hangout</div>
+        <div class="preamble__entry">Haekuh Q&A - May 1st, 2020</div>
+
+
+    </div>
+</div>
+
+<div class="chatlog">
+    <div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/429275180309807134/dcff1a4bd27c602e1598b6a161ff564f.png" alt="Avatar" />
+    </div>
+    <div class="chatlog__messages">
+    <span class="chatlog__author-name" title="Nano#8992" data-user-id="429275180309807134" style="color: #E91E63">Nano</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">02-May-20 02:21 AM</span>
+
+            <div class="chatlog__message " data-message-id="705952025451429899" id="message-705952025451429899">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">haekuh is answering Zenohm&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  When doing the behavioral portion of the interview, what are you looking for in an applicant. What would be a red flag, what would be a flag to move forward, etc?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/150799801368313858/8359d688b7bce0e0389c5f0b8f4ed1ca.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Zenohm
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705952026181238885" id="message-705952026181238885">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>haekuh:</strong> During the behavioral portion amazon is looking for specific qualities related to the 12 leadership principles. There really are no red flags other than illegal, or inflammatory behavior. In general its about trying to get a good idea about your attitude, and company fit.</span>
+
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="705952281614614600" id="message-705952281614614600">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">haekuh is answering trashGitUser&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  you said that there will be four people interviewing you at the same time, is that always the case?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/579316829638361109/e691a6eed52d1c3457f334da971cd97a.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by trashGitUser
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705952282692419584" id="message-705952282692419584">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>haekuh:</strong> not <strong>always</strong>, but usually during an onsite interview that is for a non internship position you will have 4-5 interviewers.</span>
+
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="705952941454131260" id="message-705952941454131260">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">haekuh is answering shan&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  You mentioned the &quot;resolve diagreement with a senior&quot; needing a specific format at a place like amazon. Could you elaborate on the format?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/356260437567995914/347b4cf90b56fcdc223a4bec2afffec9.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by shan
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705952942272020490" id="message-705952942272020490">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>haekuh:</strong> The format of the behavioral questions would be covered by your recruiter before the onsite interview process. The goal is to use a standard method for explaining a situation called STAR, and to demonstrate the amazon leadership principles in your response. All candidates get this information. <a href="https://www.amazon.jobs/en/principles">https://www.amazon.jobs/en/principles</a></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <a class="chatlog__embed-title-link" href="https://www.amazon.jobs/en/principles"><span class="markdown">Amazon&#39;s global career site</span></a>
+                            </div>
+
+
+                        </div>
+
+                        <div class="chatlog__embed-thumbnail-container">
+                            <a class="chatlog__embed-thumbnail-link" href="https://static.amazon.jobs/global_images/2/images/Jobs_thumbnailV2.jpg?1554491962">
+                                <img class="chatlog__embed-thumbnail" src="https://static.amazon.jobs/global_images/2/images/Jobs_thumbnailV2.jpg?1554491962" alt="Thumbnail" />
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="👍" title="👍" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705953498449051708" id="message-705953498449051708">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">haekuh is answering Nicholas&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  You mentioned that most people don&#39;t get to any working solution on that particular question, if that&#39;s the case do they get any more help/encouragement on the following questions?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/349122024129429524/68332eb30bda5c136a6e9068d9b93e03.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Nicholas
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705953498793246823" id="message-705953498793246823">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>haekuh:</strong> Absolutely. I probably should have said this during the actual livestream, but the whole point of the interview is to see how you work and think as an engineer. I gain nothing by asking you a question you have absolutely no idea how to answer. It is no uncommon that I just switch questions if someone tells me they just have absolutely no idea how to solve the question. That being said there are still some things that you should know. Its a bit of a balancing act between asking general info, while still trying to ensure some level of standards.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="👍" title="👍" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png" />
+                            <span class="chatlog__reaction-count">3</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705954819998875739" id="message-705954819998875739">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">haekuh is answering Toby Larone&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  I think there will be a few people here that do not yet know about linked lists, nor their uses in the real world. Could you give a real world use case for this particular problem?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/227810440560902144/477e803cf500d080d99653b7d95213e6.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Toby Larone
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705954820430757899" id="message-705954820430757899">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>haekuh:</strong> A semi real work example for a problem like this could involve needing to copy sub sections of graphs. IE I need to create a new graph out of all the children of a specific node. The goal though is not always to ask a real world question though. I have only ~30 minutes to get an accurate idea of a candidate.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="👍" title="👍" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705955320475942973" id="message-705955320475942973">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">haekuh is answering Sphexi&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Was the amount of back and forth/guiding that you (Haekuh) did in this interview representative of what would happen in a real one, or would an interviewee be expected to ask the majority of the questions and work through the problem on their own?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/349994608165519363/79480dae4dd292d47ea76460895655dc.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Sphexi
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705955321172197417" id="message-705955321172197417">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>haekuh:</strong> It was fairly accurate. In a real interview it would have been a little less hint giving and more talking about the problem. Most people feel like they cant talk to their interviewer, but that is not the case. Its a good sign when a candidate is talking out loud, asking questions to clarify any edge cases, and discussing the problem.</span>
+
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="705955485748297738" id="message-705955485748297738">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">haekuh is answering Po0ka&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Generally, how prepared are your interviewed people when they attend one of your interview?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/209002718897897472/75e7b7c9bd5056346d6fcef29b93a1f4.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Po0ka
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705955485953818637" id="message-705955485953818637">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>haekuh:</strong> I would say fairly prepared. I can&#39;t really guess though.</span>
+
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="705955820369870928" id="message-705955820369870928">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">haekuh is answering Toby Larone&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What&#39;s the biggest mistake you&#39;ve made during your career? What did you learn from it?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/227810440560902144/477e803cf500d080d99653b7d95213e6.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Toby Larone
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705955821183303710" id="message-705955821183303710">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>haekuh:</strong> Big question. I am lucky to not have made too many mistakes. My biggest one was not being aggressive about internships during college, and being afraid to look bad. No one ever learned anything by being right all the time.</span>
+
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="705956094073110559" id="message-705956094073110559">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">haekuh is answering hhhapz&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  You said when you&#39;re not working, you enjoy gaming? What games do you play?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/404781849198460948/bb9677f3c79e3ef50433b18c3ed1075a.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by hhhapz
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705956094580621393" id="message-705956094580621393">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>haekuh:</strong> satisfactory, league of legends, factorio, monster hunter world, destiny 2, many other games that will make you ask if I even get my work done</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="lol" title="lol" src="https://cdn.discordapp.com/emojis/657311422878842918.png" />
+                            <span class="chatlog__reaction-count">7</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705956248046141491" id="message-705956248046141491">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">haekuh is answering Po0ka&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Has anyone left during an interview and/or have you ever stopped an interview midway?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/209002718897897472/75e7b7c9bd5056346d6fcef29b93a1f4.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Po0ka
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705956248411177074" id="message-705956248411177074">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>haekuh:</strong> nope, but I have had people who were extraordinarily nervous.</span>
+
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="705956576942358568" id="message-705956576942358568">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">haekuh is answering aeonian&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  What&#39;s the best way to approach straight up not knowing the answer</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/384380159387500544/88cd3eb08fea13e370a16d497fb80bb2.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by aeonian
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705956577370308760" id="message-705956577370308760">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>haekuh:</strong> Just say so. You should always attempt to make a little progress(its important not to give up easily), but when asked a question you truly have no answer to you should say so. hhhapz told me he had never used a linked list before. That gave me some info which allowed me to change my expectations.</span>
+
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="705956764721348630" id="message-705956764721348630">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">haekuh is answering moss&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  what is a trait/skill that you personally like to look for in interviewees?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/209448908806422528/eff68c665f4162765bac99dd14254804.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by moss
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705956765782507520" id="message-705956765782507520">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>haekuh:</strong> a strong sense of the engineering process. People who look at a problem and are already thinking of the edge cases are usually strong.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="👍" title="👍" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705957248530382978" id="message-705957248530382978">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">haekuh is answering cros&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  As an interviewer, how do you genereally handle interviewees that have had a breakdown during an interview due to anxiety?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/372552884866252802/b46e58aa7be4ae1e571e2d55a349221e.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by cros
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705957249234763798" id="message-705957249234763798">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>haekuh:</strong> I havent had anyone have a flat out breakdown, but I have had people who are extremely nervous. Being friendly is probably my best tool, sometimes some extra positivity helps as well. Unfortunately I can only judge people on what skills they show me, so I always recommend taking several in person interviews and mock interviews to try and work out the interview jitters.</span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="👍" title="👍" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705957505464926328" id="message-705957505464926328">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">haekuh is answering NNMai&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Can we assume that other Amazon interviewers evaluate a candidate the same way as you do? Or it&#39;s subjective depending on the interviewer?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/embed/avatars/3.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by NNMai
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705957506064842812" id="message-705957506064842812">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>haekuh:</strong> I can say that the criteria is standardized, and that there are systems in place to make sure that a single persons opinion does not end up deciding a hire or no hire decision</span>
+
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="705958070815293510" id="message-705958070815293510">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">haekuh is answering Toby Larone&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Do you feel like the interview process at amazon works well? Are you able to compare it to your other places of work, and is there anything you would like to change? Is there anything you feel like other companies absolutely should bring into their interview process?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/227810440560902144/477e803cf500d080d99653b7d95213e6.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Toby Larone
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705958071633051769" id="message-705958071633051769">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>haekuh:</strong> I feel like it works pretty well. I wish there was a way to make the process less stressful for people, but have no good ideas on how to do that .It is way better than the places I have previously worked. Companies absolutely should bring the concept of the amazon &quot;bar raiser&quot; if they havent already.  <a href="https://blog.aboutamazon.com/working-at-amazon/how-amazon-hires">https://blog.aboutamazon.com/working-at-amazon/how-amazon-hires</a></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <a class="chatlog__embed-title-link" href="https://blog.aboutamazon.com/working-at-amazon/how-amazon-hires"><span class="markdown">How Amazon hires</span></a>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown">Learn more about Amazon’s Bar Raiser Program.</span></div>
+
+                        </div>
+
+                        <div class="chatlog__embed-thumbnail-container">
+                            <a class="chatlog__embed-thumbnail-link" href="https://d39w7f4ix9f5s9.cloudfront.net/dims4/default/e78d770/2147483647/strip/true/crop/2000x1047+0+0/resize/1200x628!/quality/90/?url=http%3A%2F%2Famazon-blogs-brightspot.s3.amazonaws.com%2F00%2F08%2F1db6379f4c0bba1e10f7b5e7b347%2F20181101barraiserprogram-blog-13.jpg">
+                                <img class="chatlog__embed-thumbnail" src="https://d39w7f4ix9f5s9.cloudfront.net/dims4/default/e78d770/2147483647/strip/true/crop/2000x1047+0+0/resize/1200x628!/quality/90/?url=http%3A%2F%2Famazon-blogs-brightspot.s3.amazonaws.com%2F00%2F08%2F1db6379f4c0bba1e10f7b5e7b347%2F20181101barraiserprogram-blog-13.jpg" alt="Thumbnail" />
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="705958342010601533" id="message-705958342010601533">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">haekuh is answering Nicholas&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  Does the organization the person is intervewing for usually have set standards for the interviewer is simply asked to fill in, or can the interviewer add their personal opinion or other impressions the have gathered from the interviewee?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/349122024129429524/68332eb30bda5c136a6e9068d9b93e03.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Nicholas
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705958342778159139" id="message-705958342778159139">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>haekuh:</strong> all standards are set for the company and based on the job title. Interviewers are not allowed to move the goal posts.</span>
+
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="705958496176308284" id="message-705958496176308284">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">haekuh is answering doxJJ&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  If you have several candidates who are fit for the role (after onsite), how does Amazon narrow down the selection process?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/361659628766887937/7382f3795dffafee0bfea6a328e02116.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by doxJJ
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705958496574898247" id="message-705958496574898247">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>haekuh:</strong> that actually happens in a process which happens outside of the normal hiring one, so I cannot say.</span>
+
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="705958889740304435" id="message-705958889740304435">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">haekuh is answering sunset&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  how did you improve your skills over time and come to a point where you were confident in your abilities</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/339450117566365709/97fd6ffb0619dd3b57362aa5cb1dc33b.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by sunset
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705958890184900719" id="message-705958890184900719">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>haekuh:</strong> I spent 7 years teaching myself C 89 out of books. After surviving the beating C gave me I was confident enough to figure out anything. If you asked me right now to code you something in python I couldnt(because I know absolutely no python) but if you give me some time I can figure it out</span>
+
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="705959132020080660" id="message-705959132020080660">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">haekuh is answering Gh0sticF0rm&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  You mentioned working on an optical interferometer. I am sure it was quite a fascinating experience. How did you stumble on this project ? Can you give us more details if possible ? Please and thank you ! :BraveryHearts:</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/325879975058210818/b0dfb8fe433f7bed8418c1c1cf51fd6c.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Gh0sticF0rm
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">2</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="HR_tohruYAY" title="HR_tohruYAY" src="https://cdn.discordapp.com/emojis/601185935714943005.gif" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="BraveryHearts" title="BraveryHearts" src="https://cdn.discordapp.com/emojis/559353643048894474.gif" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705959132686975026" id="message-705959132686975026">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>haekuh:</strong> I actually came across it through a friend. It was a great bit of fun and the most interesting work ever. <a href="http://www.mro.nmt.edu/about-mro/interferometer-mroi/">http://www.mro.nmt.edu/about-mro/interferometer-mroi/</a> feel free to PM me about it if you like</span>
+
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="705959516772237352" id="message-705959516772237352">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">haekuh is answering sunset&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  what can you do for a kick ass first impression</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/339450117566365709/97fd6ffb0619dd3b57362aa5cb1dc33b.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by sunset
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705959517267034153" id="message-705959517267034153">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>haekuh:</strong> ask clarifying questions, think out loud, tell me your solutions before trying to write them down, run the interview for me(in a good way), show me you can take charge when given a problem and will apply a standard process to it, <strong>run your solution though some test cases and check for edge cases while doing so</strong></span>
+
+                </div>
+
+
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">3</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705959728366223400" id="message-705959728366223400">
+                <div class="chatlog__content">
+                    <span class="markdown"></span>
+
+                </div>
+
+
+            <div class="chatlog__embed">
+                <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,255,1)"></div>
+                <div class="chatlog__embed-content-container">
+                    <div class="chatlog__embed-content">
+                        <div class="chatlog__embed-text">
+
+                            <div class="chatlog__embed-title">
+                                <span class="markdown">haekuh is answering Toby Larone&#39;s Question:</span>
+                            </div>
+
+                            <div class="chatlog__embed-description"><span class="markdown"><strong>Question:</strong>  If you weren&#39;t working on DynamoDB which of the many services would you like to work on at amazon?</span></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chatlog__embed-footer">
+                        <img class="chatlog__embed-footer-icon" src="https://cdn.discordapp.com/avatars/227810440560902144/477e803cf500d080d99653b7d95213e6.png" alt="Footer icon" />
+
+                        <span class="chatlog__embed-footer-text">
+                            Asked by Toby Larone
+                            
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+                <div class="chatlog__reactions">
+                        <div class="chatlog__reaction">
+                            <img class="emoji emoji--small" alt="⭐" title="⭐" src="https://twemoji.maxcdn.com/2/72x72/2b50.png" />
+                            <span class="chatlog__reaction-count">1</span>
+                        </div>
+                </div>
+            </div>
+            <div class="chatlog__message " data-message-id="705959729184374807" id="message-705959729184374807">
+                <div class="chatlog__content">
+                    <span class="markdown"><strong>haekuh:</strong> S3 sounded pretty cool. I really wanted to write C for the hardware division(I secretly love hardware), but they wouldnt take me <img class="emoji " alt="🙂" title="🙂" src="https://twemoji.maxcdn.com/2/72x72/1f642.png" /></span>
+
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+</div>
+
+<div class="postamble">
+    <div class="postamble__entry">Exported 42 message(s)</div>
+</div>
+
+</body>
+</html>
