@@ -9,6 +9,7 @@ const requiredArticleFrontmatter = ["authors", "date"]
 
 const LAYOUT_RESOURCES = "resources"
 const LAYOUT_ARCHIVES = "archives"
+const LAYOUT_AMA_ARCHIVES = "ama-archives"
 const LAYOUT_REGULAR = "regular"
 const LAYOUT_HOME = "home"
 
@@ -19,6 +20,10 @@ function resolveLayout(path) {
 
   if (path.match(/resources/)) {
     return LAYOUT_RESOURCES
+  }
+
+  if (path.match(/ama-archives/)) {
+    return LAYOUT_AMA_ARCHIVES
   }
 
   if (path.match(/archives/)) {

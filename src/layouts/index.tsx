@@ -1,6 +1,7 @@
 import { WindowLocation } from "@reach/router"
 import React, { FC, useMemo } from "react"
 import { LocationProvider } from "../LocationProvider"
+import { AmaArchivesLayout } from "./AmaArchivesLayout"
 import { ArchivesLayout } from "./ArchivesLayout"
 import { HomeLayout } from "./HomeLayout"
 import { PageLayout } from "./PageLayout"
@@ -17,10 +18,13 @@ interface IBaseLayout extends IPageContext {
 }
 
 const BaseLayout: FC<IBaseLayout> = (props) => {
+  console.log(props.pageContext.layout)
   const ResolvedLayout = useMemo(() => {
     switch (props.pageContext.layout) {
       case "resources":
         return ResourcesLayout
+      case "ama-archives":
+        return AmaArchivesLayout
       case "archives":
         return ArchivesLayout
       case "regular":

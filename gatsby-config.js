@@ -74,6 +74,13 @@ module.exports = {
         path: `${__dirname}/src/content/archives`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `ama-archive`,
+        path: `${__dirname}/static/ama-archives`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-react-svg`,
     `gatsby-plugin-remove-trailing-slashes`,
